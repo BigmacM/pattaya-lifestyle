@@ -5,10 +5,10 @@ const { houseManagement } = businessData.services;
 const { title, description, features, plans, offer } = houseManagement;
 ---
 
-<section id="services" class="section bg-sand-50">
+<section id="services" class="py-16 md:py-20 lg:py-24 bg-sand-50">
   <div class="container-custom">
     <!-- Section Header with Image -->
-    <div class="grid lg:grid-cols-2 gap-8 items-center mb-16">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
       <div class="order-2 lg:order-1">
         <span class="badge badge-green mb-4">Our Services</span>
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
@@ -19,27 +19,27 @@ const { title, description, features, plans, offer } = houseManagement;
         </p>
       </div>
       <div class="order-1 lg:order-2">
-        <div class="rounded-3xl overflow-hidden shadow-soft-lg">
+        <div class="rounded-2xl overflow-hidden shadow-soft-lg">
           <img
             src="/images/house-managment.webp"
             alt="Professional house management services in Pattaya"
-            class="w-full h-64 lg:h-80 object-cover"
+            class="w-full h-56 lg:h-72 object-cover"
           />
         </div>
       </div>
     </div>
 
     <!-- Two Column Layout -->
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
       <!-- Left Column - Features List -->
-      <div class="reveal">
-        <h3 class="font-display text-2xl font-semibold text-gray-900 mb-8">
+      <div>
+        <h3 class="font-display text-xl font-semibold text-gray-900 mb-6">
           Services Included
         </h3>
-        <div class="grid sm:grid-cols-2 gap-6">
+        <div class="grid sm:grid-cols-2 gap-4">
           {features.map((feature) => (
-            <div class="flex gap-4 p-4 rounded-xl bg-white shadow-soft hover:shadow-soft-lg transition-shadow">
-              <div class="feature-icon flex-shrink-0">
+            <div class="flex gap-3 p-3 rounded-xl bg-white shadow-soft hover:shadow-soft-lg transition-shadow">
+              <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center flex-shrink-0">
                 {feature.icon === 'inspection' && (
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
@@ -82,45 +82,47 @@ const { title, description, features, plans, offer } = houseManagement;
       </div>
 
       <!-- Right Column - Pricing Cards -->
-      <div class="reveal animation-delay-200">
+      <div>
         <!-- Offer Badge -->
         {offer && (
-          <div class="bg-secondary-100 border border-secondary-300 rounded-xl p-4 mb-6 flex items-center gap-3">
+          <div class="bg-secondary-50 border border-secondary-200 rounded-xl p-4 mb-6 flex items-center gap-3">
             <span class="badge badge-gold">{offer.badge}</span>
             <div>
-              <p class="font-semibold text-gray-900">{offer.title}</p>
-              <p class="text-sm text-gray-600">{offer.description}</p>
+              <p class="font-semibold text-gray-900 text-sm">{offer.title}</p>
+              <p class="text-xs text-gray-600">{offer.description}</p>
             </div>
           </div>
         )}
 
         <!-- Pricing Cards -->
-        <div class="space-y-6">
+        <div class="space-y-4">
           {plans.map((plan) => (
-            <div class:list={['card card-hover', { 'card-featured': plan.isFeatured }]}>
-              {plan.isFeatured && (
-                <div class="flex justify-end -mt-2 -mr-2 mb-2">
-                  <span class="badge badge-gold">Most Popular</span>
+            <div class:list={['card p-5', { 'card-featured ring-2 ring-secondary-400': plan.isFeatured, 'hover:shadow-soft-lg transition-shadow': !plan.isFeatured }]}>
+              <div class="flex items-start justify-between mb-3">
+                <div>
+                  <div class="flex items-baseline gap-1">
+                    <span class="text-2xl font-bold text-primary-700">{plan.price}</span>
+                    <span class="text-sm text-gray-500">{plan.currency} / {plan.period}</span>
+                  </div>
+                  <h4 class="font-display text-lg font-semibold text-gray-900">{plan.name}</h4>
                 </div>
-              )}
-              <div class="flex items-baseline gap-2 mb-4">
-                <span class="price text-primary-700">{plan.price}</span>
-                <span class="price-currency">{plan.currency} / {plan.period}</span>
+                {plan.isFeatured && (
+                  <span class="badge badge-gold text-xs">Popular</span>
+                )}
               </div>
-              <h4 class="font-display text-xl font-semibold text-gray-900 mb-4">{plan.name}</h4>
-              <ul class="space-y-3 mb-6">
-                {plan.features.map((feature) => (
-                  <li class="flex items-start gap-3">
-                    <svg class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <ul class="space-y-2 mb-4">
+                {plan.features.slice(0, 4).map((feature) => (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                     </svg>
-                    <span class="text-gray-600">{feature}</span>
+                    <span class="text-sm text-gray-600">{feature}</span>
                   </li>
                 ))}
               </ul>
               <a
                 href="/contact"
-                class:list={['btn w-full', plan.isFeatured ? 'btn-primary' : 'btn-outline']}
+                class:list={['btn btn-sm w-full', plan.isFeatured ? 'btn-primary' : 'btn-outline']}
               >
                 Get Started
               </a>

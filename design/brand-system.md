@@ -85,15 +85,19 @@ Warm, inviting neutral palette for backgrounds and text areas.
 - Create visual interest through varied column widths
 - Stagger elements vertically for depth
 
-### Organic Shapes
-- **Wave Dividers:** SVG wave transitions between sections
-- **Blob Backgrounds:** Organic blob shapes in hero and feature sections
-- **Rounded Corners:** Use generous border-radius (16px-24px) on cards
+### Section Transitions
+- **Integrated Waves:** Wave SVGs are part of sections (not standalone dividers) to ensure seamless connections
+- **Color Continuity:** Wave colors must match the adjacent section backgrounds
+- **Dark Section Pattern:** Experience/culinary sections use integrated top and bottom waves within the component
 
-### Overlapping Elements
-- Cards and images slightly overlap their containers
-- Create depth through layered elements
-- Use negative margins strategically
+### Organic Shapes
+- **Blob Backgrounds:** Organic blob shapes in hero and feature sections
+- **Rounded Corners:** Use generous border-radius (16px for cards, 24px for images)
+
+### Layout Principles
+- Avoid overlapping elements that cause alignment issues
+- Use consistent padding within sections (py-16 md:py-20 lg:py-24)
+- Cards should have equal heights within grids using flexbox
 
 ### Shadows
 - **Soft Shadows:** Large, diffuse shadows for neomorphism feel
@@ -102,10 +106,11 @@ Warm, inviting neutral palette for backgrounds and text areas.
 - `shadow-glow`: Special highlights (gold accent)
 
 ### Spacing
-- Use generous whitespace
-- Section padding: 80px-120px vertical
-- Card padding: 24px-32px
-- Gap between elements: 16px-32px
+- Use consistent whitespace throughout
+- Section padding: `py-16 md:py-20 lg:py-24` (64px - 80px - 96px)
+- Card padding: 20px-24px (p-5 to p-6)
+- Grid gaps: 24px (gap-6) for cards, 32px (gap-8) for larger elements
+- Header margins: mb-12 for section headers
 
 ---
 
