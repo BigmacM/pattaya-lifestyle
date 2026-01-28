@@ -7,15 +7,26 @@ const { title, description, features, plans, offer } = houseManagement;
 
 <section id="services" class="section bg-sand-50">
   <div class="container-custom">
-    <!-- Section Header -->
-    <div class="text-center mb-16">
-      <span class="badge badge-green mb-4">Our Services</span>
-      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-        {title}
-      </h2>
-      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-        {description}
-      </p>
+    <!-- Section Header with Image -->
+    <div class="grid lg:grid-cols-2 gap-8 items-center mb-16">
+      <div class="order-2 lg:order-1">
+        <span class="badge badge-green mb-4">Our Services</span>
+        <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          {title}
+        </h2>
+        <p class="text-lg text-gray-600">
+          {description}
+        </p>
+      </div>
+      <div class="order-1 lg:order-2">
+        <div class="rounded-3xl overflow-hidden shadow-soft-lg">
+          <img
+            src="/images/house-managment.webp"
+            alt="Professional house management services in Pattaya"
+            class="w-full h-64 lg:h-80 object-cover"
+          />
+        </div>
+      </div>
     </div>
 
     <!-- Two Column Layout -->

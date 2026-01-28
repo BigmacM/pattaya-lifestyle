@@ -37,8 +37,21 @@ const { title, description, items } = experience;
           <div class="bg-primary-800/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-primary-700/50 hover:border-secondary-400/50 transition-all duration-300">
             <!-- Image -->
             <div class="relative h-64 overflow-hidden">
-              <div class="absolute inset-0 bg-gradient-to-br from-primary-700/80 to-primary-900/80 group-hover:opacity-70 transition-opacity z-10"></div>
-              <div class="absolute inset-0 bg-[url('/images/food-placeholder.jpg')] bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/30 to-transparent group-hover:opacity-80 transition-opacity z-10"></div>
+              {item.id === 'personal-chef' && (
+                <img
+                  src="/images/catering-with-chef.webp"
+                  alt="Private Thai chef preparing authentic cuisine"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+              )}
+              {item.id === 'bbq-seafood' && (
+                <img
+                  src="/images/chef-seafood.webp"
+                  alt="Fresh BBQ seafood dinner setup"
+                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+              )}
 
               <!-- Price Badge -->
               <div class="absolute top-4 right-4 z-20">

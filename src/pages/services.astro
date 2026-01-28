@@ -60,8 +60,14 @@ const pageDescription = "Explore our property management plans, cleaning service
 >
   <!-- Hero Section -->
   <section class="relative pt-32 pb-20 bg-primary-900 overflow-hidden">
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    <div class="absolute inset-0 opacity-20">
+      <img
+        src="/images/house-managment.webp"
+        alt=""
+        class="w-full h-full object-cover"
+        aria-hidden="true"
+      />
+      <div class="absolute inset-0 bg-primary-900/80"></div>
     </div>
 
     <div class="container-custom relative z-10">
@@ -206,42 +212,49 @@ const pageDescription = "Explore our property management plans, cleaning service
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {premiumAddons.map((addon) => (
-          <div class="card card-hover">
-            <div class="w-14 h-14 rounded-2xl bg-primary-100 flex items-center justify-center mb-6">
+          <div class="card card-hover overflow-hidden p-0">
+            <!-- Image -->
+            <div class="relative h-40 overflow-hidden">
               {addon.icon === 'cleaning' && (
-                <svg class="w-7 h-7 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
-                </svg>
+                <img
+                  src="/images/cleaning-service.webp"
+                  alt="Professional cleaning service"
+                  class="w-full h-full object-cover"
+                />
               )}
               {addon.icon === 'linen' && (
-                <svg class="w-7 h-7 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
-                </svg>
+                <img
+                  src="/images/linen-laundry-card.webp"
+                  alt="Fresh linen and laundry service"
+                  class="w-full h-full object-cover"
+                />
               )}
               {addon.icon === 'pool' && (
-                <svg class="w-7 h-7 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21c.6 0 1.2-.4 1.5-1 .5-1.1 1.3-1.5 2.5-1.5s2 .4 2.5 1.5c.3.6.9 1 1.5 1s1.2-.4 1.5-1c.5-1.1 1.3-1.5 2.5-1.5s2 .4 2.5 1.5c.3.6.9 1 1.5 1"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 17c.6 0 1.2-.4 1.5-1 .5-1.1 1.3-1.5 2.5-1.5s2 .4 2.5 1.5c.3.6.9 1 1.5 1s1.2-.4 1.5-1c.5-1.1 1.3-1.5 2.5-1.5s2 .4 2.5 1.5c.3.6.9 1 1.5 1"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v8M9 6l3-3 3 3"/>
-                </svg>
+                <img
+                  src="/images/pool-garden-card.webp"
+                  alt="Pool and garden maintenance"
+                  class="w-full h-full object-cover"
+                />
               )}
             </div>
 
-            <h3 class="font-display text-xl font-semibold text-gray-900 mb-2">{addon.title}</h3>
-            <p class="text-gray-600 mb-6">{addon.description}</p>
+            <div class="p-6">
+              <h3 class="font-display text-xl font-semibold text-gray-900 mb-2">{addon.title}</h3>
+              <p class="text-gray-600 mb-6">{addon.description}</p>
 
-            <div class="space-y-4 pt-4 border-t border-gray-100">
-              {addon.options.map((option) => (
-                <div class="flex justify-between items-center">
-                  <div>
-                    <p class="font-medium text-gray-900">{option.name}</p>
-                    <p class="text-sm text-gray-500">{option.note}</p>
+              <div class="space-y-4 pt-4 border-t border-gray-100">
+                {addon.options.map((option) => (
+                  <div class="flex justify-between items-center">
+                    <div>
+                      <p class="font-medium text-gray-900">{option.name}</p>
+                      <p class="text-sm text-gray-500">{option.note}</p>
+                    </div>
+                    <p class="font-semibold text-primary-700 whitespace-nowrap">
+                      {option.priceRange} <span class="text-sm font-normal text-gray-500">{option.currency}</span>
+                    </p>
                   </div>
-                  <p class="font-semibold text-primary-700 whitespace-nowrap">
-                    {option.priceRange} <span class="text-sm font-normal text-gray-500">{option.currency}</span>
-                  </p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         ))}
@@ -266,30 +279,49 @@ const pageDescription = "Explore our property management plans, cleaning service
 
       <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {experience.items.map((item) => (
-          <div class="bg-primary-800/50 rounded-2xl p-8 border border-primary-700/50">
-            <div class="flex items-start justify-between mb-4">
-              <h3 class="font-display text-2xl font-semibold text-white">{item.title}</h3>
-              <span class="badge bg-secondary-400 text-primary-900">
+          <div class="bg-primary-800/50 rounded-2xl overflow-hidden border border-primary-700/50">
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden">
+              {item.id === 'personal-chef' && (
+                <img
+                  src="/images/catering-with-chef.webp"
+                  alt="Private Thai chef preparing authentic cuisine"
+                  class="w-full h-full object-cover"
+                />
+              )}
+              {item.id === 'bbq-seafood' && (
+                <img
+                  src="/images/chef-seafood.webp"
+                  alt="Fresh BBQ seafood dinner setup"
+                  class="w-full h-full object-cover"
+                />
+              )}
+              <div class="absolute inset-0 bg-gradient-to-t from-primary-900/80 to-transparent"></div>
+              <span class="absolute bottom-4 right-4 badge bg-secondary-400 text-primary-900">
                 {item.price} {item.currency}
               </span>
             </div>
-            <p class="text-primary-200 mb-4">{item.description}</p>
-            <p class="text-secondary-400 text-sm font-medium mb-6">{item.minOrder}</p>
 
-            <div class="grid grid-cols-2 gap-3 mb-6">
-              {item.highlights.map((highlight) => (
-                <div class="flex items-center gap-2">
-                  <svg class="w-4 h-4 text-secondary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                  </svg>
-                  <span class="text-sm text-primary-100">{highlight}</span>
-                </div>
-              ))}
+            <div class="p-8">
+              <h3 class="font-display text-2xl font-semibold text-white mb-3">{item.title}</h3>
+              <p class="text-primary-200 mb-4">{item.description}</p>
+              <p class="text-secondary-400 text-sm font-medium mb-6">{item.minOrder}</p>
+
+              <div class="grid grid-cols-2 gap-3 mb-6">
+                {item.highlights.map((highlight) => (
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-secondary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-sm text-primary-100">{highlight}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a href="/contact" class="btn btn-secondary w-full">
+                Book Experience
+              </a>
             </div>
-
-            <a href="/contact" class="btn btn-secondary w-full">
-              Book Experience
-            </a>
           </div>
         ))}
       </div>
