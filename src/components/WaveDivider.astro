@@ -1,0 +1,41 @@
+---
+interface Props {
+  color?: string;
+  flip?: boolean;
+  className?: string;
+}
+
+const { color = '#fdfdf9', flip = false, className = '' } = Astro.props;
+---
+
+<div class:list={['wave-divider', { 'wave-flip': flip }, className]}>
+  <svg
+    viewBox="0 0 1440 120"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+    class="w-full h-auto"
+  >
+    <path
+      d="M0 120L48 110C96 100 192 80 288 70C384 60 480 60 576 65C672 70 768 80 864 85C960 90 1056 90 1152 85C1248 80 1344 70 1392 65L1440 60V0H1392C1344 0 1248 0 1152 0C1056 0 960 0 864 0C768 0 672 0 576 0C480 0 384 0 288 0C192 0 96 0 48 0H0V120Z"
+      fill={color}
+    />
+  </svg>
+</div>
+
+<style>
+  .wave-divider {
+    line-height: 0;
+    margin-top: -1px;
+  }
+
+  .wave-flip {
+    transform: rotate(180deg);
+    margin-top: 0;
+    margin-bottom: -1px;
+  }
+
+  .wave-divider svg {
+    display: block;
+  }
+</style>

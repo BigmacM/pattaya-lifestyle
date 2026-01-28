@@ -1,0 +1,232 @@
+{
+  "businessInfo": {
+    "name": "Pattaya Lifestyle",
+    "tagline": "Stay with me. Relax with us.",
+    "description": "Premium property management, concierge services, and luxury lifestyle experiences in Pattaya, Thailand. From villa management to personal chef services, we make your stay extraordinary.",
+    "phone": "+66 81 234 5678",
+    "email": "info@pattayalifestyle.com",
+    "address": "Pattaya, Chonburi, Thailand",
+    "googleMapsLink": "https://maps.google.com/?q=Pattaya,Chonburi,Thailand",
+    "hours": [
+      { "days": "Monday - Friday", "time": "9:00 AM - 6:00 PM" },
+      { "days": "Saturday", "time": "9:00 AM - 4:00 PM" },
+      { "days": "Sunday", "time": "By Appointment" }
+    ],
+    "geo": { "latitude": "12.9236", "longitude": "100.8825" },
+    "siteUrl": "https://pattayalifestyle.com",
+    "priceRange": "1,000 - 20,000 THB"
+  },
+  "hero": {
+    "headline": "Stay with me. Relax with us.",
+    "subheadline": "Premium Property Management & Lifestyle Services in Pattaya",
+    "backgroundImage": "/images/hero-villa-sunset.jpg",
+    "ctaText": "Explore Services",
+    "ctaLink": "#services"
+  },
+  "services": {
+    "houseManagement": {
+      "title": "House Management Service",
+      "description": "Complete peace of mind for property owners. We take care of your villa while you're away.",
+      "features": [
+        {
+          "name": "Property Inspection",
+          "description": "Weekly or monthly thorough property inspections",
+          "icon": "inspection"
+        },
+        {
+          "name": "Key Holding & Secure Storage",
+          "description": "Safe and secure key management for your property",
+          "icon": "key"
+        },
+        {
+          "name": "Air Conditioning Check",
+          "description": "Regular AC maintenance and functionality tests",
+          "icon": "ac"
+        },
+        {
+          "name": "Mail Collection & Bill Payment",
+          "description": "Handle all correspondence and utility payments",
+          "icon": "mail"
+        },
+        {
+          "name": "Emergency Contact Point",
+          "description": "24/7 emergency response and coordination",
+          "icon": "emergency"
+        },
+        {
+          "name": "Coordinate Repairs & Maintenance",
+          "description": "Manage all repair works with trusted contractors",
+          "icon": "repair"
+        }
+      ],
+      "plans": [
+        {
+          "name": "Basic Plan",
+          "price": "1,000",
+          "currency": "THB",
+          "period": "Month",
+          "features": ["Monthly property inspection", "Key holding", "Bill payment coordination", "Emergency contact"],
+          "isFeatured": false
+        },
+        {
+          "name": "Premium Plan",
+          "price": "2,000",
+          "currency": "THB",
+          "period": "Month",
+          "features": ["Weekly property inspection", "Key holding", "All bill payments included", "24/7 emergency response", "AC & appliance checks", "Repair coordination", "Priority service"],
+          "isFeatured": true
+        }
+      ],
+      "offer": {
+        "title": "Summer Kick-off",
+        "discount": "20%",
+        "description": "Get 20% off the first month for new contracts signed in April",
+        "badge": "20% Off"
+      }
+    },
+    "premiumAddons": [
+      {
+        "id": "cleaning",
+        "title": "Cleaning Service",
+        "icon": "cleaning",
+        "description": "Professional cleaning services for your property",
+        "image": "/images/cleaning-service.jpg",
+        "options": [
+          {
+            "name": "Deep Cleaning",
+            "priceRange": "1,500 - 5,000",
+            "currency": "THB",
+            "note": "Depending on size"
+          },
+          {
+            "name": "Regular Clean",
+            "priceRange": "500 - 1,000",
+            "currency": "THB",
+            "note": "Per visit"
+          }
+        ],
+        "isFeatured": true
+      },
+      {
+        "id": "linen",
+        "title": "Linen & Laundry",
+        "icon": "linen",
+        "description": "Fresh linens and professional laundry service",
+        "image": "/images/linen-service.jpg",
+        "options": [
+          {
+            "name": "Bed Sheet Set",
+            "priceRange": "200 - 400",
+            "currency": "THB",
+            "note": "Per set"
+          },
+          {
+            "name": "Towel Set",
+            "priceRange": "100 - 200",
+            "currency": "THB",
+            "note": "Per set"
+          }
+        ],
+        "isFeatured": true
+      },
+      {
+        "id": "pool-garden",
+        "title": "Pool & Garden",
+        "icon": "pool",
+        "description": "Keep your outdoor spaces pristine",
+        "image": "/images/pool-garden.jpg",
+        "options": [
+          {
+            "name": "Pool Cleaning",
+            "priceRange": "1,500 - 3,000",
+            "currency": "THB",
+            "note": "Per month"
+          },
+          {
+            "name": "Garden Care",
+            "priceRange": "1,000 - 2,500",
+            "currency": "THB",
+            "note": "Per month"
+          }
+        ],
+        "isFeatured": true
+      }
+    ],
+    "experience": {
+      "title": "Culinary Experiences",
+      "description": "Elevate your stay with unforgettable dining experiences",
+      "backgroundColor": "dark-green",
+      "items": [
+        {
+          "id": "personal-chef",
+          "title": "Private Thai Chef",
+          "description": "Authentic Thai cuisine prepared fresh in your villa by our experienced private chef",
+          "price": "1,500",
+          "currency": "THB",
+          "priceNote": "per person",
+          "minOrder": "Minimum 4 guests",
+          "image": "/images/personal-chef.jpg",
+          "highlights": ["Authentic Thai recipes", "Fresh local ingredients", "Customizable menu", "Full service dining"]
+        },
+        {
+          "id": "bbq-seafood",
+          "title": "BBQ Seafood Night",
+          "description": "Fresh local seafood sourced daily, grilled to perfection at your villa",
+          "price": "2,500",
+          "currency": "THB",
+          "priceNote": "per set",
+          "minOrder": "Serves 2-3 guests",
+          "image": "/images/bbq-seafood.jpg",
+          "highlights": ["Daily fresh catch", "Premium seafood selection", "Professional grilling service", "Complete setup included"]
+        }
+      ]
+    },
+    "realEstate": {
+      "title": "House Promotion & Selling",
+      "description": "Professional marketing services to showcase and sell your property",
+      "image": "/images/real-estate.jpg",
+      "package": {
+        "name": "Marketing Package",
+        "priceRange": "5,000 - 20,000",
+        "currency": "THB",
+        "priceNote": "One-time fee",
+        "features": [
+          {
+            "name": "Professional Photography",
+            "description": "High-quality interior and exterior shots",
+            "icon": "camera"
+          },
+          {
+            "name": "Video Walkthroughs",
+            "description": "Cinematic property tour videos",
+            "icon": "video"
+          },
+          {
+            "name": "Drone Shots",
+            "description": "Stunning aerial views of your property",
+            "icon": "drone"
+          },
+          {
+            "name": "Social Media Ad Management",
+            "description": "Targeted advertising campaigns",
+            "icon": "social"
+          },
+          {
+            "name": "Listing Creation",
+            "description": "Professional listings on major platforms",
+            "icon": "listing"
+          }
+        ]
+      }
+    }
+  },
+  "contactPage": {
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124584.30456399955!2d100.79881471640625!3d12.923598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102950269fc5c25%3A0x40223bc2c382480!2sPattaya%2C%20Chonburi%2C%20Thailand!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s",
+    "contactMessage": "Have questions about our services? We'd love to hear from you. Reach out for a personalized consultation about your property management needs or to book an exclusive experience."
+  },
+  "socials": {
+    "facebook": "https://facebook.com/pattayalifestyle",
+    "instagram": "https://instagram.com/pattayalifestyle",
+    "line": "https://line.me/pattayalifestyle"
+  }
+}

@@ -1,0 +1,122 @@
+---
+import businessData from '../../content/business.json';
+
+const { houseManagement } = businessData.services;
+const { title, description, features, plans, offer } = houseManagement;
+---
+
+<section id="services" class="section bg-sand-50">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="badge badge-green mb-4">Our Services</span>
+      <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        {title}
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        {description}
+      </p>
+    </div>
+
+    <!-- Two Column Layout -->
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Left Column - Features List -->
+      <div class="reveal">
+        <h3 class="font-display text-2xl font-semibold text-gray-900 mb-8">
+          Services Included
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          {features.map((feature) => (
+            <div class="flex gap-4 p-4 rounded-xl bg-white shadow-soft hover:shadow-soft-lg transition-shadow">
+              <div class="feature-icon flex-shrink-0">
+                {feature.icon === 'inspection' && (
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                  </svg>
+                )}
+                {feature.icon === 'key' && (
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+                  </svg>
+                )}
+                {feature.icon === 'ac' && (
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                )}
+                {feature.icon === 'mail' && (
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                )}
+                {feature.icon === 'emergency' && (
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                  </svg>
+                )}
+                {feature.icon === 'repair' && (
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                )}
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-900 mb-1">{feature.name}</h4>
+                <p class="text-sm text-gray-600">{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right Column - Pricing Cards -->
+      <div class="reveal animation-delay-200">
+        <!-- Offer Badge -->
+        {offer && (
+          <div class="bg-secondary-100 border border-secondary-300 rounded-xl p-4 mb-6 flex items-center gap-3">
+            <span class="badge badge-gold">{offer.badge}</span>
+            <div>
+              <p class="font-semibold text-gray-900">{offer.title}</p>
+              <p class="text-sm text-gray-600">{offer.description}</p>
+            </div>
+          </div>
+        )}
+
+        <!-- Pricing Cards -->
+        <div class="space-y-6">
+          {plans.map((plan) => (
+            <div class:list={['card card-hover', { 'card-featured': plan.isFeatured }]}>
+              {plan.isFeatured && (
+                <div class="flex justify-end -mt-2 -mr-2 mb-2">
+                  <span class="badge badge-gold">Most Popular</span>
+                </div>
+              )}
+              <div class="flex items-baseline gap-2 mb-4">
+                <span class="price text-primary-700">{plan.price}</span>
+                <span class="price-currency">{plan.currency} / {plan.period}</span>
+              </div>
+              <h4 class="font-display text-xl font-semibold text-gray-900 mb-4">{plan.name}</h4>
+              <ul class="space-y-3 mb-6">
+                {plan.features.map((feature) => (
+                  <li class="flex items-start gap-3">
+                    <svg class="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-gray-600">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="/contact"
+                class:list={['btn w-full', plan.isFeatured ? 'btn-primary' : 'btn-outline']}
+              >
+                Get Started
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
