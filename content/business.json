@@ -4,7 +4,7 @@
     "tagline": "Stay with me. Relax with us.",
     "description": "Premium property management, concierge services, and luxury lifestyle experiences in Pattaya, Thailand. From villa management to personal chef services, we make your stay extraordinary.",
     "phone": "+66 81 234 5678",
-    "email": "info@pattayalifestyle.com",
+    "email": "info@mypattaya.life",
     "address": "Pattaya, Chonburi, Thailand",
     "googleMapsLink": "https://maps.google.com/?q=Pattaya,Chonburi,Thailand",
     "hours": [
@@ -13,7 +13,7 @@
       { "days": "Sunday", "time": "By Appointment" }
     ],
     "geo": { "latitude": "12.9236", "longitude": "100.8825" },
-    "siteUrl": "https://pattayalifestyle.com",
+    "siteUrl": "https://mypattaya.life",
     "priceRange": "1,000 - 20,000 THB"
   },
   "hero": {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pattayalifestyle.com/sitemap.xml
+Sitemap: https://mypattaya.life/sitemap.xml

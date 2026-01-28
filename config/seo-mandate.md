@@ -17,9 +17,9 @@ Every page must include appropriate JSON-LD structured data in a `<script type="
   "@type": "LocalBusiness",
   "name": "Pattaya Lifestyle",
   "description": "Premium property management, concierge services, and luxury lifestyle experiences in Pattaya, Thailand.",
-  "url": "https://pattayalifestyle.com",
+  "url": "https://mypattaya.life",
   "telephone": "+66 81 234 5678",
-  "email": "info@pattayalifestyle.com",
+  "email": "info@mypattaya.life",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Pattaya",
@@ -109,7 +109,7 @@ Every page must include appropriate JSON-LD structured data in a `<script type="
     "@type": "LocalBusiness",
     "name": "Pattaya Lifestyle",
     "telephone": "+66 81 234 5678",
-    "email": "info@pattayalifestyle.com"
+    "email": "info@mypattaya.life"
   }
 }
 ```

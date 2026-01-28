@@ -1,5 +1,12 @@
 # Pattaya Lifestyle Brand System
 
+## Site Information
+
+**Domain:** https://mypattaya.life
+**Email:** info@mypattaya.life
+
+---
+
 ## Visual Identity
 
 **Brand Essence:** Tropical Luxury Concierge - Elegant, clean, and sophisticated with warm tropical undertones. The design evokes the feeling of a high-end hotel concierge service combined with the relaxed beauty of tropical Thailand.
@@ -86,9 +93,10 @@ Warm, inviting neutral palette for backgrounds and text areas.
 - Stagger elements vertically for depth
 
 ### Section Transitions
-- **Integrated Waves:** Wave SVGs are part of sections (not standalone dividers) to ensure seamless connections
-- **Color Continuity:** Wave colors must match the adjacent section backgrounds
-- **Dark Section Pattern:** Experience/culinary sections use integrated top and bottom waves within the component
+- **Minimal Waves:** Only use wave dividers in the Hero section (bottom) and services page hero
+- **Clean Transitions:** Most sections transition directly with solid background colors
+- **Dark Section Pattern:** Experience/culinary sections use solid dark green (#14532d) backgrounds without wave dividers
+- **Color Continuity:** When waves are used, colors must match the adjacent section backgrounds exactly
 
 ### Organic Shapes
 - **Blob Backgrounds:** Organic blob shapes in hero and feature sections
@@ -98,6 +106,8 @@ Warm, inviting neutral palette for backgrounds and text areas.
 - Avoid overlapping elements that cause alignment issues
 - Use consistent padding within sections (py-16 md:py-20 lg:py-24)
 - Cards should have equal heights within grids using flexbox
+- **Two-Column Stretch:** Use `items-stretch` on grids with `flex flex-col` on children to ensure columns fill equal height
+- **Auto-rows:** Use `auto-rows-fr` for equal-height grid rows
 
 ### Shadows
 - **Soft Shadows:** Large, diffuse shadows for neomorphism feel
@@ -172,21 +182,57 @@ Warm, inviting neutral palette for backgrounds and text areas.
 - Slight overlay on hero images for text contrast
 - Rounded corners matching card design
 - Consistent aspect ratios per section
+- Hover zoom effect (group-hover:scale-110) for interactive images
+
+### Image Assets (/public/images/)
+
+| Filename | Usage | Section |
+|----------|-------|---------|
+| `Hero-villa-lifestyle.webp` | Main hero background | Hero |
+| `house-managment.webp` | Services header image | Services |
+| `cleaning-service.webp` | Cleaning add-on card | Add-ons |
+| `linen-laundry-card.webp` | Linen add-on card | Add-ons |
+| `pool-garden-card.webp` | Pool & Garden add-on card | Add-ons |
+| `catering-with-chef.webp` | Private Chef experience | Experience |
+| `chef-seafood.webp` | BBQ Seafood experience | Experience |
+| `house-promo-interior.webp` | Real Estate section (homepage) | Real Estate |
+| `house-promo-selling.webp` | Real Estate section (services page) | Real Estate |
+| `general-bg-patter-footer.webp` | Footer background pattern | Footer |
 
 ---
 
 ## Animation Guidelines
 
+### Animation Classes (global.css)
+
+| Class | Effect | Usage |
+|-------|--------|-------|
+| `.fade-up` | Fade in + translate up | Section content, cards on scroll |
+| `.card-lift` | Lift + shadow on hover | Cards, interactive elements |
+| `.parallax-slow` | Slow floating motion | Decorative background blobs |
+| `.hover-glow` | Gold glow on hover | CTA buttons, secondary buttons |
+| `.img-zoom` | Scale up on hover | Card images |
+| `.animate-fade-in` | Simple fade in | Hero badge, initial elements |
+| `.animate-slide-up` | Slide up + fade in | Hero text content |
+
 ### Micro-interactions
-- **Hover:** Subtle scale + shadow
-- **Button Press:** Scale down slightly
-- **Page Load:** Staggered fade-in
+- **Hover:** Subtle scale (1.05-1.10) + shadow increase
+- **Card Lift:** translateY(-4px) + enhanced shadow
+- **Button Glow:** Gold box-shadow (0 0 20px rgba(251, 191, 36, 0.4))
+- **Image Zoom:** Scale to 105-110% within overflow-hidden container
 
 ### Scroll Animations
-- Fade up on scroll into view
-- Smooth, elegant timing (0.6s ease-out)
+- **Fade Up:** Elements fade in and translate up 30px
+- **Staggered Delays:** Use nth-child or inline animation-delay (100ms increments)
+- **Timing:** 0.6s ease-out for scroll reveals, 0.3s for hover effects
+
+### Parallax Effects
+- **Floating Blobs:** 8s infinite ease-in-out animation
+- **Movement:** Subtle multi-directional floating (translateY + translateX)
+- **Usage:** Decorative background elements in Hero and Experience sections
 
 ### Performance
 - Use CSS animations over JavaScript
-- Respect `prefers-reduced-motion`
+- Respect `prefers-reduced-motion` - disable all motion animations
 - Keep animations subtle and purposeful
+- Use `will-change` sparingly for frequently animated elements

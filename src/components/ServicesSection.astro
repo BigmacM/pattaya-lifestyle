@@ -30,13 +30,13 @@ const { title, description, features, plans, offer } = houseManagement;
     </div>
 
     <!-- Two Column Layout -->
-    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
       <!-- Left Column - Features List -->
-      <div>
+      <div class="flex flex-col">
         <h3 class="font-display text-xl font-semibold text-gray-900 mb-6">
           Services Included
         </h3>
-        <div class="grid sm:grid-cols-2 gap-4">
+        <div class="grid sm:grid-cols-2 gap-4 flex-1 auto-rows-fr">
           {features.map((feature, index) => (
             <div class="flex gap-3 p-3 rounded-xl bg-white shadow-soft hover:shadow-soft-lg transition-all duration-300 card-lift fade-up" style={`animation-delay: ${200 + index * 50}ms`}>
               <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center flex-shrink-0">
