@@ -15,99 +15,82 @@ const altMap: Record<string, string> = {
 };
 ---
 
-<section class="relative">
-  <!-- Top Wave -->
-  <div class="bg-white">
-    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-auto block">
-      <path d="M0 60L60 55C120 50 240 40 360 35C480 30 600 30 720 32.5C840 35 960 40 1080 42.5C1200 45 1320 45 1380 45L1440 45V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V60Z" fill="#14532d"/>
-    </svg>
+<section class="bg-primary-900 py-16 md:py-20 lg:py-24 relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
   </div>
 
-  <!-- Main Content -->
-  <div class="bg-primary-900 py-16 md:py-20 lg:py-24 relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-5">
-      <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%23ffffff\" fill-opacity=\"1\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  <!-- Decorative Blobs with parallax -->
+  <div class="absolute top-10 right-10 w-64 h-64 bg-secondary-400/10 rounded-full blur-3xl parallax-slow"></div>
+  <div class="absolute bottom-10 left-10 w-80 h-80 bg-primary-400/10 rounded-full blur-3xl parallax-slow"></div>
+
+  <div class="container-custom relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-12 fade-up">
+      <span class="badge bg-secondary-400 text-primary-900 mb-4">Experience</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+        {title}
+      </h2>
+      <p class="text-lg text-primary-200 max-w-2xl mx-auto">
+        {description}
+      </p>
     </div>
 
-    <!-- Decorative Blobs -->
-    <div class="absolute top-10 right-10 w-64 h-64 bg-secondary-400/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-10 left-10 w-80 h-80 bg-primary-400/10 rounded-full blur-3xl"></div>
+    <!-- Experience Cards -->
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+      {items.map((item, index) => (
+        <div class="group fade-up" style={`animation-delay: ${index * 150}ms`}>
+          <div class="bg-primary-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-primary-700/50 hover:border-secondary-400/50 transition-all duration-300 card-lift">
+            <!-- Image -->
+            <div class="relative h-48 overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/30 to-transparent z-10"></div>
+              <img
+                src={imageMap[item.id]}
+                alt={altMap[item.id]}
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+              />
 
-    <div class="container-custom relative z-10">
-      <!-- Section Header -->
-      <div class="text-center mb-12">
-        <span class="badge bg-secondary-400 text-primary-900 mb-4">Experience</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-          {title}
-        </h2>
-        <p class="text-lg text-primary-200 max-w-2xl mx-auto">
-          {description}
-        </p>
-      </div>
-
-      <!-- Experience Cards -->
-      <div class="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
-        {items.map((item) => (
-          <div class="group">
-            <div class="bg-primary-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-primary-700/50 hover:border-secondary-400/50 transition-all duration-300">
-              <!-- Image -->
-              <div class="relative h-48 overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/30 to-transparent z-10"></div>
-                <img
-                  src={imageMap[item.id]}
-                  alt={altMap[item.id]}
-                  class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                />
-
-                <!-- Price Badge -->
-                <div class="absolute top-4 right-4 z-20">
-                  <div class="bg-secondary-400 text-primary-900 px-3 py-1.5 rounded-full text-sm font-semibold">
-                    {item.price} {item.currency} {item.priceNote}
-                  </div>
+              <!-- Price Badge -->
+              <div class="absolute top-4 right-4 z-20">
+                <div class="bg-secondary-400 text-primary-900 px-3 py-1.5 rounded-full text-sm font-semibold shadow-lg">
+                  {item.price} {item.currency} {item.priceNote}
                 </div>
-              </div>
-
-              <!-- Content -->
-              <div class="p-5 md:p-6">
-                <h3 class="font-display text-xl font-semibold text-white mb-2">
-                  {item.title}
-                </h3>
-                <p class="text-sm text-primary-200 mb-3">
-                  {item.description}
-                </p>
-                <p class="text-secondary-400 text-xs font-medium mb-4">
-                  {item.minOrder}
-                </p>
-
-                <!-- Highlights -->
-                <div class="grid grid-cols-2 gap-2 mb-5">
-                  {item.highlights.map((highlight) => (
-                    <div class="flex items-center gap-2">
-                      <svg class="w-3.5 h-3.5 text-secondary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                      </svg>
-                      <span class="text-xs text-primary-100">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <!-- CTA -->
-                <a href="/contact" class="btn btn-secondary w-full text-sm py-2.5">
-                  Book Now
-                </a>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
 
-  <!-- Bottom Wave -->
-  <div class="bg-sand-100">
-    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-auto block">
-      <path d="M0 0L60 5C120 10 240 20 360 25C480 30 600 30 720 27.5C840 25 960 20 1080 17.5C1200 15 1320 15 1380 15L1440 15V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0V0Z" fill="#14532d"/>
-    </svg>
+            <!-- Content -->
+            <div class="p-5 md:p-6">
+              <h3 class="font-display text-xl font-semibold text-white mb-2">
+                {item.title}
+              </h3>
+              <p class="text-sm text-primary-200 mb-3">
+                {item.description}
+              </p>
+              <p class="text-secondary-400 text-xs font-medium mb-4">
+                {item.minOrder}
+              </p>
+
+              <!-- Highlights -->
+              <div class="grid grid-cols-2 gap-2 mb-5">
+                {item.highlights.map((highlight) => (
+                  <div class="flex items-center gap-2">
+                    <svg class="w-3.5 h-3.5 text-secondary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span class="text-xs text-primary-100">{highlight}</span>
+                  </div>
+                ))}
+              </div>
+
+              <!-- CTA -->
+              <a href="/contact" class="btn btn-secondary w-full text-sm py-2.5 hover-glow">
+                Book Now
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
 </section>

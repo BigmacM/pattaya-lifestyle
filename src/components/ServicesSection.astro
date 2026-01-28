@@ -9,7 +9,7 @@ const { title, description, features, plans, offer } = houseManagement;
   <div class="container-custom">
     <!-- Section Header with Image -->
     <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
-      <div class="order-2 lg:order-1">
+      <div class="order-2 lg:order-1 fade-up">
         <span class="badge badge-green mb-4">Our Services</span>
         <h2 class="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
           {title}
@@ -18,12 +18,12 @@ const { title, description, features, plans, offer } = houseManagement;
           {description}
         </p>
       </div>
-      <div class="order-1 lg:order-2">
-        <div class="rounded-2xl overflow-hidden shadow-soft-lg">
+      <div class="order-1 lg:order-2 fade-up" style="animation-delay: 150ms;">
+        <div class="rounded-2xl overflow-hidden shadow-soft-lg group">
           <img
             src="/images/house-managment.webp"
             alt="Professional house management services in Pattaya"
-            class="w-full h-56 lg:h-72 object-cover"
+            class="w-full h-56 lg:h-72 object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
       </div>
@@ -37,8 +37,8 @@ const { title, description, features, plans, offer } = houseManagement;
           Services Included
         </h3>
         <div class="grid sm:grid-cols-2 gap-4">
-          {features.map((feature) => (
-            <div class="flex gap-3 p-3 rounded-xl bg-white shadow-soft hover:shadow-soft-lg transition-shadow">
+          {features.map((feature, index) => (
+            <div class="flex gap-3 p-3 rounded-xl bg-white shadow-soft hover:shadow-soft-lg transition-all duration-300 card-lift fade-up" style={`animation-delay: ${200 + index * 50}ms`}>
               <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center flex-shrink-0">
                 {feature.icon === 'inspection' && (
                   <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,8 +96,8 @@ const { title, description, features, plans, offer } = houseManagement;
 
         <!-- Pricing Cards -->
         <div class="space-y-4">
-          {plans.map((plan) => (
-            <div class:list={['card p-5', { 'card-featured ring-2 ring-secondary-400': plan.isFeatured, 'hover:shadow-soft-lg transition-shadow': !plan.isFeatured }]}>
+          {plans.map((plan, index) => (
+            <div class:list={['card p-5 card-lift fade-up', { 'card-featured ring-2 ring-secondary-400': plan.isFeatured, 'hover:shadow-soft-lg': !plan.isFeatured }]} style={`animation-delay: ${400 + index * 100}ms`}>
               <div class="flex items-start justify-between mb-3">
                 <div>
                   <div class="flex items-baseline gap-1">
