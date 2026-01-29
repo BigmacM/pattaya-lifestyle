@@ -1,0 +1,32 @@
+# Enable directory browsing for index files
+DirectoryIndex index.html index.htm
+
+# Enable RewriteEngine
+RewriteEngine On
+
+# Handle trailing slashes for pretty URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
+
+# Prevent 403 on directories - serve index.html
+Options -Indexes
+
+# Set proper MIME types
+<IfModule mod_mime.c>
+    AddType text/html .html
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType image/webp .webp
+    AddType image/svg+xml .svg
+</IfModule>
+
+# Enable caching for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
