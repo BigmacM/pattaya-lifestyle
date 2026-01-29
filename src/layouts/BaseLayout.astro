@@ -129,8 +129,13 @@ const schemas = structuredData
     ))}
   </head>
   <body class="min-h-screen flex flex-col">
-    <UtilityHeader />
-    <Header />
+    <!-- Fixed Header Container -->
+    <div class="fixed top-0 left-0 right-0 z-50" id="header-container">
+      <UtilityHeader />
+      <Header />
+    </div>
+    <!-- Spacer for fixed header -->
+    <div class="h-[108px] md:h-[116px]"></div>
     <main class="flex-grow">
       <slot />
     </main>
@@ -156,12 +161,15 @@ const schemas = structuredData
       revealOnScroll();
 
       // Header scroll effect
+      const headerContainer = document.getElementById('header-container');
       const header = document.querySelector('header');
 
       window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
+          headerContainer?.classList.add('scrolled');
           header?.classList.add('scrolled');
         } else {
+          headerContainer?.classList.remove('scrolled');
           header?.classList.remove('scrolled');
         }
       });

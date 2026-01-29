@@ -280,11 +280,24 @@ Warm, inviting neutral palette for backgrounds and text areas.
 
 ## Conversion Components
 
-### Utility Header
-Top bar above main navigation displaying:
-- Emergency Hotline with phone icon (red accent)
-- Email address
-- LINE chat button (green #00B900 pill)
+### Header Structure
+The header consists of two parts wrapped in a fixed container:
+
+1. **Utility Header** (top bar):
+   - Emergency Hotline with phone icon (red accent)
+   - Email address
+   - LINE chat button (green #00B900 pill)
+
+2. **Main Navigation** (below utility header):
+   - Logo and business name
+   - Navigation links (Home, Services, Contact)
+   - "Get Started" CTA button
+   - Mobile hamburger menu
+
+**Implementation Notes:**
+- Both headers are wrapped in `#header-container` with `fixed top-0 z-50`
+- A spacer div (`h-[108px] md:h-[116px]`) is added below to prevent content overlap
+- Header background changes to white on scroll via `.scrolled` class
 
 ### Floating LINE Chat Button
 - Position: Fixed, bottom-right (bottom-6 right-6)
