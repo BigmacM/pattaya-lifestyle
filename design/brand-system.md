@@ -4,14 +4,53 @@
 
 **Domain:** https://mypattaya.life
 **Email:** info@mypattaya.life
+**Emergency Hotline:** +66 81 999 8888
+**LINE ID:** @pattayalifestyle
 
 ---
 
-## Visual Identity
+## Brand Voice & Messaging
+
+**Tagline:** "Stay with me. Relax with us."
 
 **Brand Essence:** Tropical Luxury Concierge - Elegant, clean, and sophisticated with warm tropical undertones. The design evokes the feeling of a high-end hotel concierge service combined with the relaxed beauty of tropical Thailand.
 
 **Brand Voice:** Professional yet warm, luxurious but approachable, trustworthy and experienced.
+
+**Core Differentiator:** Unlike generic real estate agencies that focus on sales, we focus purely on asset protection (House Watching, Maintenance) and lifestyle concierge services.
+
+### Trust Triggers (Display Prominently)
+- English Speaking Management
+- Police Checked Staff
+- Digital Inspection Reports
+- Fully Insured
+- 24/7 Emergency Response
+
+---
+
+## Site Architecture (Silo Strategy)
+
+### Lobby: Homepage
+Main entry point with all service silos visible.
+
+### Silo A: Management (Core Product)
+- House Watching Service
+- Key Holding
+- Mail Collection
+- Vacant Home Inspections
+- Bill Payment Coordination
+
+### Silo B: Maintenance (Execution)
+- Pool & Garden Care
+- Deep Cleaning
+- Handyman Services
+- Monsoon/Storm Checks
+
+### Silo C: Lifestyle (Differentiator)
+- Private Chef
+- BBQ Catering
+- Linen Rental
+- Concierge Services
 
 ---
 
@@ -236,3 +275,66 @@ Warm, inviting neutral palette for backgrounds and text areas.
 - Respect `prefers-reduced-motion` - disable all motion animations
 - Keep animations subtle and purposeful
 - Use `will-change` sparingly for frequently animated elements
+
+---
+
+## Conversion Components
+
+### Utility Header
+Top bar above main navigation displaying:
+- Emergency Hotline with phone icon (red accent)
+- Email address
+- LINE chat button (green #00B900 pill)
+
+### Floating LINE Chat Button
+- Position: Fixed, bottom-right (bottom-6 right-6)
+- Color: LINE Green (#00B900)
+- Size: Minimum 48x48px touch target
+- Behavior: Pulse animation to attract attention
+- Shows "Chat on LINE" text on larger screens
+
+### Trust Badges
+Display in Hero section below CTA buttons:
+- English Speaking
+- Police Checked
+- Fully Insured
+- Digital Reports
+
+### Fear/Aspiration Section
+Homepage section addressing property owner concerns:
+- Mold & Humidity Damage
+- Termite Infestations
+- Unauthorized Occupants
+- Storm & Monsoon Damage
+
+Each fear card shows the problem and our solution.
+
+### Areas Served
+Display managed neighborhoods to build local authority:
+- Pratamnak Hill
+- Jomtien
+- Na Jomtien
+- Wongamat
+- Central Pattaya
+- East Pattaya
+- Huay Yai
+- Bang Saray
+
+---
+
+## Mobile Optimization
+
+### Touch Targets
+- All buttons minimum 48x48px
+- Adequate spacing between interactive elements
+- Large tap areas for phone numbers and CTAs
+
+### 4G Speed Optimization
+- WebP images <100KB target
+- Lazy loading for below-fold content
+- Minimal JavaScript
+
+### Thai Market Specifics
+- LINE integration is essential (primary communication channel)
+- Click-to-call functionality
+- Thai Baht (฿) currency display

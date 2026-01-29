@@ -1,61 +1,153 @@
 {
   "businessInfo": {
-    "name": "Pattaya Lifestyle",
+    "name": "Pattaya Lifestyle House Management",
     "tagline": "Stay with me. Relax with us.",
-    "description": "Premium property management, concierge services, and luxury lifestyle experiences in Pattaya, Thailand. From villa management to personal chef services, we make your stay extraordinary.",
+    "description": "Trusted property management for absentee owners in Pattaya. House watching, villa care, and lifestyle concierge services. English speaking, police checked staff, fully insured.",
     "phone": "+66 81 234 5678",
+    "emergencyHotline": "+66 81 999 8888",
     "email": "info@mypattaya.life",
-    "address": "Pattaya, Chonburi, Thailand",
+    "lineId": "@pattayalifestyle",
+    "lineUrl": "https://line.me/R/ti/p/@pattayalifestyle",
+    "address": {
+      "street": "123 Pratamnak Road",
+      "locality": "Pattaya",
+      "region": "Chonburi",
+      "postalCode": "20150",
+      "country": "TH"
+    },
     "googleMapsLink": "https://maps.google.com/?q=Pattaya,Chonburi,Thailand",
     "hours": [
       { "days": "Monday - Friday", "time": "9:00 AM - 6:00 PM" },
       { "days": "Saturday", "time": "9:00 AM - 4:00 PM" },
-      { "days": "Sunday", "time": "By Appointment" }
+      { "days": "Emergency", "time": "24/7 Hotline Available" }
     ],
     "geo": { "latitude": "12.9236", "longitude": "100.8825" },
     "siteUrl": "https://mypattaya.life",
-    "priceRange": "1,000 - 20,000 THB"
+    "priceRange": "฿฿"
+  },
+  "trustBadges": [
+    { "label": "English Speaking", "icon": "language" },
+    { "label": "Police Checked", "icon": "shield" },
+    { "label": "Fully Insured", "icon": "verified" },
+    { "label": "Digital Reports", "icon": "document" }
+  ],
+  "seo": {
+    "titleTag": "Pattaya Property Management | House Watching & Villa Care | English Speaking",
+    "metaDescription": "Trusted home care for absentee owners in Pattaya. Monthly inspections, pool cleaning, and maid services from 1,000 THB/mo. English speaking. Police checked staff.",
+    "primaryKeywords": [
+      "Pattaya property management for absentee owners",
+      "House watching service Pattaya",
+      "Villa management companies Pattaya",
+      "Vacant home inspections Pattaya"
+    ],
+    "serviceKeywords": [
+      "Swimming pool cleaning Pattaya prices",
+      "Gardener Pattaya monthly rate",
+      "Deep cleaning service Pattaya",
+      "Move out cleaning Pattaya"
+    ],
+    "longTailKeywords": [
+      "Key holding service Pattaya",
+      "Airing out house service Pattaya",
+      "Pattaya storm damage check",
+      "Mail collection service Pattaya"
+    ]
   },
   "hero": {
     "headline": "Stay with me. Relax with us.",
-    "subheadline": "Premium Property Management & Lifestyle Services in Pattaya",
-    "backgroundImage": "/images/hero-villa-sunset.jpg",
-    "ctaText": "Explore Services",
-    "ctaLink": "#services"
+    "subheadline": "Trusted Property Management for Absentee Owners in Pattaya",
+    "backgroundImage": "/images/Hero-villa-lifestyle.webp",
+    "ctaText": "Get a Free Quote",
+    "ctaLink": "/contact",
+    "trustLine": "English Speaking | Police Checked Staff | Fully Insured"
+  },
+  "fears": {
+    "title": "Protect Your Investment While You're Away",
+    "description": "Your property faces real risks when left unattended. We prevent problems before they become disasters.",
+    "items": [
+      {
+        "id": "mold",
+        "title": "Mold & Humidity Damage",
+        "description": "Thailand's tropical climate means 80%+ humidity. Without regular airing, mold can destroy furniture, electronics, and walls within weeks.",
+        "solution": "Weekly airing service and humidity monitoring included in all plans.",
+        "icon": "mold"
+      },
+      {
+        "id": "termites",
+        "title": "Termite Infestations",
+        "description": "Termites cause millions in damage to Pattaya properties each year. Early detection is critical.",
+        "solution": "Monthly termite inspections with digital photo reports.",
+        "icon": "termite"
+      },
+      {
+        "id": "squatters",
+        "title": "Unauthorized Occupants",
+        "description": "Vacant properties attract squatters. Once established, removal can take months through Thai courts.",
+        "solution": "Regular visible presence and security coordination.",
+        "icon": "squatter"
+      },
+      {
+        "id": "storms",
+        "title": "Storm & Monsoon Damage",
+        "description": "Monsoon season brings flooding, wind damage, and debris. Quick response prevents water intrusion.",
+        "solution": "24/7 emergency response during monsoon season.",
+        "icon": "storm"
+      }
+    ]
   },
   "services": {
+    "silos": {
+      "management": {
+        "title": "Property Management",
+        "slug": "management",
+        "description": "Complete peace of mind for absentee owners",
+        "keywords": ["House watching", "Key holding", "Mail collection", "Vacant home inspections"]
+      },
+      "maintenance": {
+        "title": "Property Maintenance",
+        "slug": "maintenance",
+        "description": "Professional upkeep and repairs",
+        "keywords": ["Pool cleaning", "Garden care", "Handyman services", "Storm damage checks"]
+      },
+      "lifestyle": {
+        "title": "Lifestyle Concierge",
+        "slug": "lifestyle",
+        "description": "Premium experiences and services",
+        "keywords": ["Private chef", "BBQ catering", "Linen rental", "Airport transfers"]
+      }
+    },
     "houseManagement": {
-      "title": "House Management Service",
-      "description": "Complete peace of mind for property owners. We take care of your villa while you're away.",
+      "title": "House Watching Service Pattaya",
+      "description": "Professional property management for absentee owners. We protect your investment with regular inspections, key holding, and 24/7 emergency response.",
       "features": [
         {
-          "name": "Property Inspection",
-          "description": "Weekly or monthly thorough property inspections",
+          "name": "Vacant Home Inspections",
+          "description": "Weekly or monthly thorough property inspections with digital photo reports",
           "icon": "inspection"
         },
         {
-          "name": "Key Holding & Secure Storage",
-          "description": "Safe and secure key management for your property",
+          "name": "Key Holding Service",
+          "description": "Secure key management with controlled access logging",
           "icon": "key"
         },
         {
-          "name": "Air Conditioning Check",
-          "description": "Regular AC maintenance and functionality tests",
+          "name": "Airing Out Service",
+          "description": "Regular ventilation to prevent mold and humidity damage",
           "icon": "ac"
         },
         {
-          "name": "Mail Collection & Bill Payment",
+          "name": "Mail Collection & Bills",
           "description": "Handle all correspondence and utility payments",
           "icon": "mail"
         },
         {
-          "name": "Emergency Contact Point",
-          "description": "24/7 emergency response and coordination",
+          "name": "24/7 Emergency Response",
+          "description": "Round-the-clock emergency coordination",
           "icon": "emergency"
         },
         {
-          "name": "Coordinate Repairs & Maintenance",
-          "description": "Manage all repair works with trusted contractors",
+          "name": "Repair Coordination",
+          "description": "Trusted contractor network for all repair works",
           "icon": "repair"
         }
       ],
@@ -65,7 +157,7 @@
           "price": "1,000",
           "currency": "THB",
           "period": "Month",
-          "features": ["Monthly property inspection", "Key holding", "Bill payment coordination", "Emergency contact"],
+          "features": ["Monthly property inspection", "Key holding service", "Bill payment coordination", "Emergency contact point", "Digital inspection reports"],
           "isFeatured": false
         },
         {
@@ -73,7 +165,7 @@
           "price": "2,000",
           "currency": "THB",
           "period": "Month",
-          "features": ["Weekly property inspection", "Key holding", "All bill payments included", "24/7 emergency response", "AC & appliance checks", "Repair coordination", "Priority service"],
+          "features": ["Weekly property inspection", "Key holding service", "All bill payments included", "24/7 emergency response", "AC & humidity checks", "Airing out service", "Priority contractor access"],
           "isFeatured": true
         }
       ],
@@ -87,10 +179,10 @@
     "premiumAddons": [
       {
         "id": "cleaning",
-        "title": "Cleaning Service",
+        "title": "Deep Cleaning Service",
         "icon": "cleaning",
-        "description": "Professional cleaning services for your property",
-        "image": "/images/cleaning-service.jpg",
+        "description": "Professional deep cleaning and move-out cleaning services",
+        "image": "/images/cleaning-service.webp",
         "options": [
           {
             "name": "Deep Cleaning",
@@ -99,23 +191,23 @@
             "note": "Depending on size"
           },
           {
-            "name": "Regular Clean",
-            "priceRange": "500 - 1,000",
+            "name": "Move Out Clean",
+            "priceRange": "2,000 - 6,000",
             "currency": "THB",
-            "note": "Per visit"
+            "note": "Full property"
           }
         ],
         "isFeatured": true
       },
       {
         "id": "linen",
-        "title": "Linen & Laundry",
+        "title": "Linen Rental Service",
         "icon": "linen",
-        "description": "Fresh linens and professional laundry service",
-        "image": "/images/linen-service.jpg",
+        "description": "Fresh hotel-quality linens and professional laundry service",
+        "image": "/images/linen-laundry-card.webp",
         "options": [
           {
-            "name": "Bed Sheet Set",
+            "name": "Bed Linen Set",
             "priceRange": "200 - 400",
             "currency": "THB",
             "note": "Per set"
@@ -131,10 +223,10 @@
       },
       {
         "id": "pool-garden",
-        "title": "Pool & Garden",
+        "title": "Pool & Garden Care",
         "icon": "pool",
-        "description": "Keep your outdoor spaces pristine",
-        "image": "/images/pool-garden.jpg",
+        "description": "Monthly pool cleaning and garden maintenance contracts",
+        "image": "/images/pool-garden-card.webp",
         "options": [
           {
             "name": "Pool Cleaning",
@@ -153,8 +245,8 @@
       }
     ],
     "experience": {
-      "title": "Culinary Experiences",
-      "description": "Elevate your stay with unforgettable dining experiences",
+      "title": "Lifestyle Concierge Services",
+      "description": "Elevate your stay with premium concierge experiences",
       "backgroundColor": "dark-green",
       "items": [
         {
@@ -165,26 +257,26 @@
           "currency": "THB",
           "priceNote": "per person",
           "minOrder": "Minimum 4 guests",
-          "image": "/images/personal-chef.jpg",
+          "image": "/images/catering-with-chef.webp",
           "highlights": ["Authentic Thai recipes", "Fresh local ingredients", "Customizable menu", "Full service dining"]
         },
         {
           "id": "bbq-seafood",
-          "title": "BBQ Seafood Night",
+          "title": "BBQ Seafood Catering",
           "description": "Fresh local seafood sourced daily, grilled to perfection at your villa",
           "price": "2,500",
           "currency": "THB",
           "priceNote": "per set",
           "minOrder": "Serves 2-3 guests",
-          "image": "/images/bbq-seafood.jpg",
-          "highlights": ["Daily fresh catch", "Premium seafood selection", "Professional grilling service", "Complete setup included"]
+          "image": "/images/chef-seafood.webp",
+          "highlights": ["Daily fresh catch", "Premium seafood selection", "Professional grilling", "Complete setup"]
         }
       ]
     },
     "realEstate": {
-      "title": "House Promotion & Selling",
-      "description": "Professional marketing services to showcase and sell your property",
-      "image": "/images/real-estate.jpg",
+      "title": "Property Marketing & Sales",
+      "description": "Professional marketing services to showcase and sell your Pattaya property",
+      "image": "/images/house-promo-selling.webp",
       "package": {
         "name": "Marketing Package",
         "priceRange": "5,000 - 20,000",
@@ -202,31 +294,41 @@
             "icon": "video"
           },
           {
-            "name": "Drone Shots",
+            "name": "Drone Aerial Shots",
             "description": "Stunning aerial views of your property",
             "icon": "drone"
           },
           {
-            "name": "Social Media Ad Management",
-            "description": "Targeted advertising campaigns",
+            "name": "Social Media Marketing",
+            "description": "Targeted Facebook & Instagram campaigns",
             "icon": "social"
           },
           {
-            "name": "Listing Creation",
-            "description": "Professional listings on major platforms",
+            "name": "Platform Listings",
+            "description": "Professional listings on major Thai real estate sites",
             "icon": "listing"
           }
         ]
       }
     }
   },
+  "managedAreas": [
+    "Pratamnak Hill",
+    "Jomtien",
+    "Na Jomtien",
+    "Wongamat",
+    "Central Pattaya",
+    "East Pattaya",
+    "Huay Yai",
+    "Bang Saray"
+  ],
   "contactPage": {
     "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124584.30456399955!2d100.79881471640625!3d12.923598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102950269fc5c25%3A0x40223bc2c382480!2sPattaya%2C%20Chonburi%2C%20Thailand!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s",
-    "contactMessage": "Have questions about our services? We'd love to hear from you. Reach out for a personalized consultation about your property management needs or to book an exclusive experience."
+    "contactMessage": "Get a free property assessment and personalized quote. We respond within 24 hours."
   },
   "socials": {
     "facebook": "https://facebook.com/pattayalifestyle",
     "instagram": "https://instagram.com/pattayalifestyle",
-    "line": "https://line.me/pattayalifestyle"
+    "line": "https://line.me/R/ti/p/@pattayalifestyle"
   }
 }

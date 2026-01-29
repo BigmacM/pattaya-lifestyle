@@ -1,29 +1,36 @@
-# SEO Mandate - Pattaya Lifestyle
+# SEO Mandate - Pattaya Lifestyle House Management
 
 ## Overview
-This document outlines the SEO requirements for the Pattaya Lifestyle website. All pages must implement these requirements to ensure optimal search engine visibility and local business discoverability.
+This document outlines the SEO requirements for the mypattaya.life website. All pages must implement these requirements to ensure optimal search engine visibility, local business discoverability, and Page 1 ranking for target keywords.
+
+**Domain:** https://mypattaya.life
+**Business Type:** HomeAndConstructionBusiness
+**Target Market:** Absentee property owners in Pattaya, Thailand
 
 ---
 
 ## Structured Data Requirements
 
-Every page must include appropriate JSON-LD structured data in a `<script type="application/ld+json">` tag.
+Every page must include appropriate JSON-LD structured data in `<script type="application/ld+json">` tags.
 
-### Homepage: LocalBusiness Schema
+### Homepage: LocalBusiness + Service Schema
 
 ```json
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Pattaya Lifestyle",
-  "description": "Premium property management, concierge services, and luxury lifestyle experiences in Pattaya, Thailand.",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "Pattaya Lifestyle House Management",
+  "description": "Trusted property management for absentee owners in Pattaya. House watching, villa care, and lifestyle concierge services. English speaking, police checked staff, fully insured.",
   "url": "https://mypattaya.life",
   "telephone": "+66 81 234 5678",
   "email": "info@mypattaya.life",
+  "priceRange": "฿฿",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "123 Pratamnak Road",
     "addressLocality": "Pattaya",
     "addressRegion": "Chonburi",
+    "postalCode": "20150",
     "addressCountry": "TH"
   },
   "geo": {
@@ -31,68 +38,38 @@ Every page must include appropriate JSON-LD structured data in a `<script type="
     "latitude": "12.9236",
     "longitude": "100.8825"
   },
-  "priceRange": "1,000 - 20,000 THB",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "16:00"
-    }
-  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Pattaya"
+  },
   "sameAs": [
     "https://facebook.com/pattayalifestyle",
-    "https://instagram.com/pattayalifestyle"
+    "https://instagram.com/pattayalifestyle",
+    "https://line.me/R/ti/p/@pattayalifestyle"
   ]
 }
 ```
 
-### Services Page: Service Schema
+### Service Schema (For Pricing Display in Search Results)
 
 ```json
 {
-  "@context": "https://schema.org",
+  "@context": "https://schema.org/",
   "@type": "Service",
-  "serviceType": "Property Management",
+  "serviceType": "House Management",
   "provider": {
     "@type": "LocalBusiness",
-    "name": "Pattaya Lifestyle"
+    "name": "Pattaya Lifestyle House Management"
   },
   "areaServed": {
     "@type": "City",
     "name": "Pattaya"
   },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Property Management Services",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Basic Plan",
-          "description": "Monthly property inspection, key holding, bill payment coordination"
-        },
-        "price": "1000",
-        "priceCurrency": "THB"
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Premium Plan",
-          "description": "Weekly property inspection, 24/7 emergency response, full maintenance coordination"
-        },
-        "price": "2000",
-        "priceCurrency": "THB"
-      }
-    ]
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "THB",
+    "price": "1000",
+    "description": "Basic House Watching Package - Monthly property inspection, key holding, bill coordination"
   }
 }
 ```
@@ -103,11 +80,11 @@ Every page must include appropriate JSON-LD structured data in a `<script type="
 {
   "@context": "https://schema.org",
   "@type": "ContactPage",
-  "name": "Contact Pattaya Lifestyle",
-  "description": "Get in touch with Pattaya Lifestyle for property management and concierge services in Pattaya, Thailand.",
+  "name": "Contact Pattaya Lifestyle House Management",
+  "description": "Get a free property assessment and personalized quote. English speaking staff available via phone, email, or LINE.",
   "mainEntity": {
     "@type": "LocalBusiness",
-    "name": "Pattaya Lifestyle",
+    "name": "Pattaya Lifestyle House Management",
     "telephone": "+66 81 234 5678",
     "email": "info@mypattaya.life"
   }
@@ -118,92 +95,130 @@ Every page must include appropriate JSON-LD structured data in a `<script type="
 
 ## Meta Tags Requirements
 
-### Every Page Must Include:
-
-1. **Title Tag** - Unique, descriptive, 50-60 characters
-2. **Meta Description** - Compelling, 150-160 characters
-3. **Canonical URL** - Self-referencing canonical
-4. **Open Graph Tags** - For social sharing
-5. **Twitter Card Tags** - For Twitter sharing
-
-### Homepage Meta Tags
+### Homepage
 ```html
-<title>Pattaya Lifestyle | Premium Property Management & Concierge Services</title>
-<meta name="description" content="Luxury property management, villa services, and exclusive experiences in Pattaya, Thailand. From house management to private chef services.">
+<title>Pattaya Property Management | House Watching & Villa Care | English Speaking</title>
+<meta name="description" content="Trusted home care for absentee owners in Pattaya. Monthly inspections, pool cleaning, and maid services from 1,000 THB/mo. English speaking. Police checked staff.">
 ```
 
-### Services Page Meta Tags
+### Services Page
 ```html
-<title>Our Services | Pattaya Lifestyle - Property Management & Home Services</title>
-<meta name="description" content="Explore our property management plans, cleaning services, pool & garden care, and premium add-ons starting from 1,000 THB/month.">
+<title>House Watching Services Pattaya | Property Management Plans from 1,000 THB</title>
+<meta name="description" content="Professional house watching and villa management for absentee owners. Key holding, vacant home inspections, bill payment, 24/7 emergency response. Get a free quote.">
 ```
 
-### Contact Page Meta Tags
+### Contact Page
 ```html
-<title>Contact Us | Pattaya Lifestyle - Get in Touch</title>
-<meta name="description" content="Contact Pattaya Lifestyle for property management inquiries. Located in Pattaya, Chonburi, Thailand. Call +66 81 234 5678.">
+<title>Contact Us | Free Property Assessment | Pattaya Property Management</title>
+<meta name="description" content="Get a free property assessment and customized management quote. English speaking staff available via phone, email, or LINE. 24/7 emergency hotline.">
 ```
+
+---
+
+## Trust Modifiers (Use in UI Labels)
+
+These should appear prominently in headers, badges, and feature lists:
+
+- **"English Speaking"** - Language accessibility
+- **"Police Checked"** - Staff security verification
+- **"Fully Insured"** - Liability coverage
+- **"Digital Reports"** - Transparency and documentation
+- **"24/7 Emergency"** - Always available support
+- **"Western Management"** - Quality standards
 
 ---
 
 ## Technical SEO Requirements
 
-### Performance
-- Core Web Vitals optimization
-- Lazy loading for images below the fold
-- Proper image alt text on all images
-- WebP format with fallbacks
-
-### Accessibility
-- Semantic HTML structure
-- ARIA labels where needed
-- Keyboard navigation support
-- Color contrast compliance (WCAG AA)
-
-### Mobile
-- Mobile-first responsive design
-- Touch-friendly tap targets
+### Mobile-First Design
+- Optimized for 4G speeds (common in Thailand)
+- Button touch targets minimum **48x48px**
+- WebP images, target file size <100KB
 - No horizontal scrolling
 - Readable font sizes without zoom
 
+### Communication Integration
+- **Floating LINE Chat Button** - Green (#00B900), bottom right, always visible
+- **Click-to-Call** functionality on phone numbers
+- **Emergency Hotline** prominently displayed in utility header
+- Contact form with LINE ID option
+
+### Performance
+- Core Web Vitals optimization
+- Lazy loading for images below the fold
+- Proper image alt text with keywords
+- WebP format for all images
+
 ### Crawlability
-- Clean URL structure
-- XML sitemap
-- robots.txt configuration
-- Internal linking structure
+- Clean URL structure (silos)
+- XML sitemap at /sitemap.xml
+- robots.txt configured
+- Strong internal linking between silos
 
 ---
 
 ## NAP Consistency
 
-**Name:** Pattaya Lifestyle
-**Address:** Pattaya, Chonburi, Thailand
+**Name:** Pattaya Lifestyle House Management
+**Address:** 123 Pratamnak Road, Pattaya, Chonburi 20150, Thailand
 **Phone:** +66 81 234 5678
+**Emergency:** +66 81 999 8888
+**Email:** info@mypattaya.life
+**LINE:** @pattayalifestyle
 
 This information must be:
-- Displayed consistently on every page (footer)
+- Displayed consistently on every page (utility header + footer)
 - Marked up with LocalBusiness schema
 - Matching across all online directories
 
 ---
 
-## Local SEO Focus Keywords
+## Primary Target Keywords
 
-### Primary Keywords
-- Pattaya property management
-- Villa management Pattaya
-- Pattaya concierge services
-- House management Thailand
+### High Intent (Use in H1s, H2s, first 100 words)
+1. "Pattaya property management for absentee owners"
+2. "House watching service Pattaya"
+3. "Villa management companies Pattaya"
+4. "Vacant home inspections Pattaya"
 
-### Secondary Keywords
-- Pool cleaning Pattaya
-- Private chef Pattaya
-- Villa rental services
-- Property inspection Thailand
-- Luxury services Pattaya
+### Service-Specific
+1. "Swimming pool cleaning Pattaya prices"
+2. "Gardener Pattaya monthly rate"
+3. "Deep cleaning service Pattaya"
+4. "Move out cleaning Pattaya"
 
-### Long-tail Keywords
-- House management services in Pattaya
-- Property management for foreign owners Thailand
-- Villa maintenance services Chonburi
-- Personal chef for villa Pattaya
+### Low Hanging Fruit (Low Competition)
+1. "Key holding service Pattaya"
+2. "Airing out house service Pattaya"
+3. "Pattaya storm damage check"
+4. "Mail collection service Pattaya"
+
+---
+
+## Competitor Benchmarks
+
+### Reference Site A: Pearl Property
+- Use for **content density** reference
+- Note their use of "Pillar Pages" for authority
+
+### Reference Site B: BaanCare
+- Use for **utility** reference
+- Replicate their header with Emergency Numbers and Line ID
+
+### Reference Site C: Pattaya Realty
+- Use for **trust building** reference
+- Note their specific listing of "Managed Villages" to build local authority
+
+---
+
+## Areas Served (Local Authority Building)
+
+List these prominently to establish local relevance:
+- Pratamnak Hill
+- Jomtien
+- Na Jomtien
+- Wongamat
+- Central Pattaya
+- East Pattaya
+- Huay Yai
+- Bang Saray

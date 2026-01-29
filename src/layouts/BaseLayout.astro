@@ -1,7 +1,9 @@
 ---
 import '../styles/global.css';
+import UtilityHeader from '../components/UtilityHeader.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import LineFloatingButton from '../components/LineFloatingButton.astro';
 import businessData from '../../content/business.json';
 
 interface Props {
@@ -10,17 +12,82 @@ interface Props {
   canonicalUrl?: string;
   ogImage?: string;
   structuredData?: object;
+  isHomepage?: boolean;
 }
 
 const {
   title,
-  description = businessData.businessInfo.description,
+  description = businessData.seo.metaDescription,
   canonicalUrl = businessData.businessInfo.siteUrl,
   ogImage = '/images/og-image.jpg',
-  structuredData
+  structuredData,
+  isHomepage = false
 } = Astro.props;
 
-const fullTitle = `${title} | ${businessData.businessInfo.name}`;
+const fullTitle = isHomepage
+  ? businessData.seo.titleTag
+  : `${title} | ${businessData.businessInfo.name}`;
+
+// Default LocalBusiness schema
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": businessData.businessInfo.name,
+  "description": businessData.businessInfo.description,
+  "url": businessData.businessInfo.siteUrl,
+  "telephone": businessData.businessInfo.phone,
+  "email": businessData.businessInfo.email,
+  "priceRange": businessData.businessInfo.priceRange,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": businessData.businessInfo.address.street,
+    "addressLocality": businessData.businessInfo.address.locality,
+    "addressRegion": businessData.businessInfo.address.region,
+    "postalCode": businessData.businessInfo.address.postalCode,
+    "addressCountry": businessData.businessInfo.address.country
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": businessData.businessInfo.geo.latitude,
+    "longitude": businessData.businessInfo.geo.longitude
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Pattaya"
+  },
+  "sameAs": [
+    businessData.socials.facebook,
+    businessData.socials.instagram,
+    businessData.socials.line
+  ]
+};
+
+// Service schema for homepage
+const serviceSchema = {
+  "@context": "https://schema.org/",
+  "@type": "Service",
+  "serviceType": "Property Management",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": businessData.businessInfo.name
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Pattaya"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "THB",
+    "price": "1000",
+    "description": "Basic House Watching Package - Monthly property inspection, key holding, bill coordination"
+  }
+};
+
+const schemas = structuredData
+  ? [localBusinessSchema, structuredData]
+  : isHomepage
+    ? [localBusinessSchema, serviceSchema]
+    : [localBusinessSchema];
 ---
 
 <!DOCTYPE html>
@@ -30,6 +97,7 @@ const fullTitle = `${title} | ${businessData.businessInfo.name}`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content={businessData.businessInfo.name} />
+    <meta name="robots" content="index, follow" />
 
     <title>{fullTitle}</title>
 
@@ -43,6 +111,7 @@ const fullTitle = `${title} | ${businessData.businessInfo.name}`;
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content={businessData.businessInfo.name} />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -54,17 +123,19 @@ const fullTitle = `${title} | ${businessData.businessInfo.name}`;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Structured Data -->
-    {structuredData && (
-      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-    )}
+    <!-- Structured Data (JSON-LD) -->
+    {schemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
   </head>
   <body class="min-h-screen flex flex-col">
+    <UtilityHeader />
     <Header />
     <main class="flex-grow">
       <slot />
     </main>
     <Footer />
+    <LineFloatingButton />
 
     <script>
       // Scroll reveal animation
