@@ -18,9 +18,9 @@ const { fears } = businessData;
     </div>
 
     <!-- Fears Grid -->
-    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto items-stretch">
       {fears.items.map((item, index) => (
-        <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 card-lift fade-up group" style={`animation-delay: ${index * 100}ms`}>
+        <div class="bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 card-lift fade-up group h-full" style={`animation-delay: ${index * 100}ms`}>
           <div class="flex gap-4">
             <!-- Icon -->
             <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-100 group-hover:text-primary-600 transition-colors">

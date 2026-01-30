@@ -82,7 +82,10 @@ const pageDescription = "Get a free property assessment and customized managemen
 
           <div class="space-y-6 mb-10">
             <!-- Phone -->
-            <div class="card card-hover">
+            <a
+              href={`tel:${businessInfo.phone.replace(/[-\s]/g, '')}`}
+              class="card card-hover block cursor-pointer"
+            >
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,19 +94,21 @@ const pageDescription = "Get a free property assessment and customized managemen
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-900 mb-1">Phone</h3>
-                  <a
-                    href={`tel:${businessInfo.phone.replace(/[-\s]/g, '')}`}
-                    class="text-lg text-primary-700 hover:text-primary-800 transition-colors"
-                  >
+                  <span class="text-lg text-primary-700">
                     {businessInfo.phone}
-                  </a>
-                  <p class="text-sm text-gray-500 mt-1">Click to call</p>
+                  </span>
+                  <p class="text-sm text-gray-500 mt-1">Tap to call</p>
                 </div>
               </div>
-            </div>
+            </a>
 
             <!-- WhatsApp -->
-            <div class="card card-hover bg-[#25D366]/5 border-[#25D366]/20">
+            <a
+              href={`https://wa.me/${businessInfo.whatsapp?.replace(/[^0-9]/g, '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card card-hover bg-[#25D366]/5 border-[#25D366]/20 block cursor-pointer"
+            >
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl bg-[#25D366] flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -112,21 +117,19 @@ const pageDescription = "Get a free property assessment and customized managemen
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-900 mb-1">WhatsApp</h3>
-                  <a
-                    href={`https://wa.me/${businessInfo.whatsapp?.replace(/[^0-9]/g, '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-lg text-[#25D366] hover:text-[#128C7E] transition-colors"
-                  >
+                  <span class="text-lg text-[#25D366]">
                     {businessInfo.whatsapp}
-                  </a>
-                  <p class="text-sm text-gray-500 mt-1">Chat with us instantly</p>
+                  </span>
+                  <p class="text-sm text-gray-500 mt-1">Tap to chat instantly</p>
                 </div>
               </div>
-            </div>
+            </a>
 
             <!-- Email -->
-            <div class="card card-hover">
+            <a
+              href={`mailto:${businessInfo.email}`}
+              class="card card-hover block cursor-pointer"
+            >
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,19 +138,21 @@ const pageDescription = "Get a free property assessment and customized managemen
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-900 mb-1">Email</h3>
-                  <a
-                    href={`mailto:${businessInfo.email}`}
-                    class="text-lg text-primary-700 hover:text-primary-800 transition-colors break-all"
-                  >
+                  <span class="text-lg text-primary-700 break-all">
                     {businessInfo.email}
-                  </a>
-                  <p class="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
+                  </span>
+                  <p class="text-sm text-gray-500 mt-1">Tap to send email</p>
                 </div>
               </div>
-            </div>
+            </a>
 
             <!-- LINE -->
-            <div class="card card-hover bg-[#00B900]/5 border-[#00B900]/20">
+            <a
+              href={businessInfo.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card card-hover bg-[#00B900]/5 border-[#00B900]/20 block cursor-pointer"
+            >
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl bg-[#00B900] flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -156,21 +161,19 @@ const pageDescription = "Get a free property assessment and customized managemen
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-900 mb-1">LINE Chat</h3>
-                  <a
-                    href={businessInfo.lineUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-lg text-[#00B900] hover:text-[#00a000] transition-colors"
-                  >
+                  <span class="text-lg text-[#00B900]">
                     {businessInfo.lineId}
-                  </a>
-                  <p class="text-sm text-gray-500 mt-1">Fastest response time</p>
+                  </span>
+                  <p class="text-sm text-gray-500 mt-1">Tap to open LINE</p>
                 </div>
               </div>
-            </div>
+            </a>
 
             <!-- Emergency Hotline -->
-            <div class="card card-hover bg-red-50 border-red-100">
+            <a
+              href={`tel:${businessInfo.emergencyHotline?.replace(/[-\s]/g, '')}`}
+              class="card card-hover bg-red-50 border-red-100 block cursor-pointer"
+            >
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl bg-red-500 flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -179,19 +182,21 @@ const pageDescription = "Get a free property assessment and customized managemen
                 </div>
                 <div>
                   <h3 class="font-semibold text-gray-900 mb-1">24/7 Emergency Hotline</h3>
-                  <a
-                    href={`tel:${businessInfo.emergencyHotline?.replace(/\s/g, '')}`}
-                    class="text-lg text-red-600 hover:text-red-700 transition-colors"
-                  >
+                  <span class="text-lg text-red-600">
                     {businessInfo.emergencyHotline}
-                  </a>
-                  <p class="text-sm text-gray-500 mt-1">For urgent property issues</p>
+                  </span>
+                  <p class="text-sm text-gray-500 mt-1">Tap to call for urgent issues</p>
                 </div>
               </div>
-            </div>
+            </a>
 
             <!-- Address -->
-            <div class="card card-hover">
+            <a
+              href={businessInfo.googleMapsLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card card-hover block cursor-pointer"
+            >
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center flex-shrink-0">
                   <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,20 +208,15 @@ const pageDescription = "Get a free property assessment and customized managemen
                   <h3 class="font-semibold text-gray-900 mb-1">Location</h3>
                   <p class="text-lg text-gray-700">{businessInfo.address.street}, {businessInfo.address.locality}</p>
                   <p class="text-gray-600">{businessInfo.address.region} {businessInfo.address.postalCode}</p>
-                  <a
-                    href={businessInfo.googleMapsLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 text-sm text-primary-700 hover:text-primary-800 mt-2 transition-colors"
-                  >
-                    Get Directions
+                  <span class="inline-flex items-center gap-1 text-sm text-primary-700 mt-2">
+                    Tap for directions
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
                     </svg>
-                  </a>
+                  </span>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
           <!-- Office Hours -->
