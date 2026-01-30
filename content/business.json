@@ -3,19 +3,21 @@
     "name": "Pattaya Lifestyle House Management",
     "tagline": "Stay with me. Relax with us.",
     "description": "Trusted property management for absentee owners in Pattaya. House watching, villa care, and lifestyle concierge services. English speaking, police checked staff, fully insured.",
-    "phone": "+66 81 234 5678",
-    "emergencyHotline": "+66 81 999 8888",
-    "email": "info@mypattaya.life",
-    "lineId": "@pattayalifestyle",
-    "lineUrl": "https://line.me/R/ti/p/@pattayalifestyle",
+    "phone": "066-041-8885",
+    "whatsapp": "+66660418885",
+    "emergencyHotline": "066-041-8885",
+    "email": "nidaspice@gmail.com",
+    "lineId": "nidarooster",
+    "lineUrl": "https://line.me/ti/p/3NiHqMBCPq",
+    "instagram": "@nidaspice",
     "address": {
-      "street": "123 Pratamnak Road",
-      "locality": "Pattaya",
-      "region": "Chonburi",
+      "street": "Rajchawaroon",
+      "locality": "Pattaya City, Bang Lamung District",
+      "region": "Chon Buri",
       "postalCode": "20150",
       "country": "TH"
     },
-    "googleMapsLink": "https://maps.google.com/?q=Pattaya,Chonburi,Thailand",
+    "googleMapsLink": "https://maps.google.com/?q=Rajchawaroon,Pattaya+City,Bang+Lamung,Chon+Buri,Thailand",
     "hours": [
       { "days": "Monday - Friday", "time": "9:00 AM - 6:00 PM" },
       { "days": "Saturday", "time": "9:00 AM - 4:00 PM" },
@@ -327,8 +329,9 @@
     "contactMessage": "Get a free property assessment and personalized quote. We respond within 24 hours."
   },
   "socials": {
-    "facebook": "https://facebook.com/pattayalifestyle",
-    "instagram": "https://instagram.com/pattayalifestyle",
-    "line": "https://line.me/R/ti/p/@pattayalifestyle"
+    "facebook": "https://www.facebook.com/share/14Y4L3PUa3J/?mibextid=wwXIfr",
+    "instagram": "https://www.instagram.com/nidaspice?igsh=MTV4Z3Z6anBsMWM1MA==",
+    "line": "https://line.me/ti/p/3NiHqMBCPq",
+    "whatsapp": "https://wa.me/66660418885"
   }
 }

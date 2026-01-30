@@ -92,12 +92,35 @@ const pageDescription = "Get a free property assessment and customized managemen
                 <div>
                   <h3 class="font-semibold text-gray-900 mb-1">Phone</h3>
                   <a
-                    href={`tel:${businessInfo.phone.replace(/\s/g, '')}`}
+                    href={`tel:${businessInfo.phone.replace(/[-\s]/g, '')}`}
                     class="text-lg text-primary-700 hover:text-primary-800 transition-colors"
                   >
                     {businessInfo.phone}
                   </a>
                   <p class="text-sm text-gray-500 mt-1">Click to call</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="card card-hover bg-[#25D366]/5 border-[#25D366]/20">
+              <div class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-xl bg-[#25D366] flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-900 mb-1">WhatsApp</h3>
+                  <a
+                    href={`https://wa.me/${businessInfo.whatsapp?.replace(/[^0-9]/g, '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-lg text-[#25D366] hover:text-[#128C7E] transition-colors"
+                  >
+                    {businessInfo.whatsapp}
+                  </a>
+                  <p class="text-sm text-gray-500 mt-1">Chat with us instantly</p>
                 </div>
               </div>
             </div>
@@ -229,10 +252,10 @@ const pageDescription = "Get a free property assessment and customized managemen
           <!-- Contact Form -->
           <div class="card">
             <h3 class="font-display text-xl font-semibold text-gray-900 mb-6">Send us a Message</h3>
-            <form class="space-y-4">
+            <form id="contact-form" class="space-y-4">
               <div class="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="name" class="label">Name</label>
+                  <label for="name" class="label">Name *</label>
                   <input
                     type="text"
                     id="name"
@@ -243,7 +266,7 @@ const pageDescription = "Get a free property assessment and customized managemen
                   />
                 </div>
                 <div>
-                  <label for="email" class="label">Email</label>
+                  <label for="email" class="label">Email *</label>
                   <input
                     type="email"
                     id="email"
@@ -279,35 +302,105 @@ const pageDescription = "Get a free property assessment and customized managemen
               </div>
 
               <div>
-                <label for="service" class="label">Service Interest</label>
-                <select id="service" name="service" class="input">
+                <label for="service" class="label">Service Interest *</label>
+                <select id="service" name="service" class="input" required>
                   <option value="">Select a service...</option>
-                  <option value="house-management">House Management</option>
-                  <option value="cleaning">Cleaning Service</option>
-                  <option value="pool-garden">Pool & Garden</option>
-                  <option value="chef">Personal Chef</option>
-                  <option value="real-estate">Real Estate Marketing</option>
-                  <option value="other">Other</option>
+                  <optgroup label="Property Management">
+                    <option value="House Management - Basic Plan">House Management - Basic Plan (1,000 THB/mo)</option>
+                    <option value="House Management - Premium Plan">House Management - Premium Plan (2,000 THB/mo)</option>
+                  </optgroup>
+                  <optgroup label="Property Maintenance">
+                    <option value="Deep Cleaning Service">Deep Cleaning Service</option>
+                    <option value="Move Out Cleaning">Move Out Cleaning</option>
+                    <option value="Pool Cleaning">Pool Cleaning (Monthly)</option>
+                    <option value="Garden Care">Garden Care (Monthly)</option>
+                  </optgroup>
+                  <optgroup label="Lifestyle Services">
+                    <option value="Private Thai Chef">Private Thai Chef (1,500 THB/person)</option>
+                    <option value="BBQ Seafood Catering">BBQ Seafood Catering (2,500 THB/set)</option>
+                    <option value="Linen Rental">Linen Rental Service</option>
+                  </optgroup>
+                  <optgroup label="Real Estate">
+                    <option value="Property Marketing Package">Property Marketing & Sales Package</option>
+                  </optgroup>
+                  <option value="Multiple Services">Multiple Services (specify below)</option>
+                  <option value="Other">Other (specify below)</option>
                 </select>
               </div>
 
               <div>
-                <label for="message" class="label">Message</label>
+                <label for="property-location" class="label">Property Location (Optional)</label>
+                <select id="property-location" name="property-location" class="input">
+                  <option value="">Select area...</option>
+                  <option value="Pratamnak Hill">Pratamnak Hill</option>
+                  <option value="Jomtien">Jomtien</option>
+                  <option value="Na Jomtien">Na Jomtien</option>
+                  <option value="Wongamat">Wongamat</option>
+                  <option value="Central Pattaya">Central Pattaya</option>
+                  <option value="East Pattaya">East Pattaya</option>
+                  <option value="Huay Yai">Huay Yai</option>
+                  <option value="Bang Saray">Bang Saray</option>
+                  <option value="Other">Other Area</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="label">Message *</label>
                 <textarea
                   id="message"
                   name="message"
                   rows="4"
                   class="input resize-none"
-                  placeholder="Tell us about your needs..."
+                  placeholder="Tell us about your property and needs..."
                   required
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary w-full">
-                Send Message
+              <button type="submit" class="btn btn-primary w-full flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                Send via WhatsApp
               </button>
+
+              <p class="text-xs text-gray-500 text-center mt-2">
+                Your message will open in WhatsApp for quick response
+              </p>
             </form>
           </div>
+
+          <script>
+            // TEST NUMBER - Change to client number for production: +66660418885
+            const WHATSAPP_NUMBER = '16479094565';
+
+            document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+              e.preventDefault();
+
+              const name = (document.getElementById('name') as HTMLInputElement)?.value || '';
+              const email = (document.getElementById('email') as HTMLInputElement)?.value || '';
+              const phone = (document.getElementById('phone') as HTMLInputElement)?.value || '';
+              const lineId = (document.getElementById('line-id') as HTMLInputElement)?.value || '';
+              const service = (document.getElementById('service') as HTMLSelectElement)?.value || '';
+              const location = (document.getElementById('property-location') as HTMLSelectElement)?.value || '';
+              const message = (document.getElementById('message') as HTMLTextAreaElement)?.value || '';
+
+              // Build WhatsApp message
+              let whatsappMessage = `*New Inquiry from Pattaya Lifestyle Website*\n\n`;
+              whatsappMessage += `*Name:* ${name}\n`;
+              whatsappMessage += `*Email:* ${email}\n`;
+              if (phone) whatsappMessage += `*Phone:* ${phone}\n`;
+              if (lineId) whatsappMessage += `*LINE ID:* ${lineId}\n`;
+              whatsappMessage += `*Service:* ${service}\n`;
+              if (location) whatsappMessage += `*Property Location:* ${location}\n`;
+              whatsappMessage += `\n*Message:*\n${message}`;
+
+              // Encode and open WhatsApp
+              const encodedMessage = encodeURIComponent(whatsappMessage);
+              const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+              window.open(whatsappUrl, '_blank');
+            });
+          </script>
         </div>
       </div>
     </div>
