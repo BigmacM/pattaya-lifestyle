@@ -170,7 +170,8 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
   // Main image click opens lightbox
   mainContainer?.addEventListener('click', (e) => {
     // Don't open lightbox if clicking on navigation arrows
-    if ((e.target as Element).closest('#main-prev') || (e.target as Element).closest('#main-next')) {
+    const target = e.target;
+    if (target && target.closest && (target.closest('#main-prev') || target.closest('#main-next'))) {
       return;
     }
     openLightbox(currentIndex);
