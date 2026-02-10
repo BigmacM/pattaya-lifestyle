@@ -150,6 +150,389 @@
           ]
         }
       }
+    },
+    {
+      "id": "jomtien-rimhad-condo",
+      "slug": "jomtien-rimhad-condo",
+      "title": "Jomtien Rimhad Condo",
+      "titleTh": "คอนโดจอมเทียนริมหาด",
+      "subtitle": "Studio Condo Near Jomtien Beach | For Sale & Rent",
+      "subtitleTh": "คอนโดสตูดิโอ ใกล้หาดจอมเทียน | ขายและให้เช่า",
+      "status": "available",
+      "listingType": "both",
+      "price": {
+        "amount": 13000,
+        "currency": "THB",
+        "period": "month",
+        "formatted": "13,000"
+      },
+      "salePrice": {
+        "amount": 1290000,
+        "currency": "THB",
+        "formatted": "1.29M"
+      },
+      "featured": true,
+      "featuredImage": "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo featured image(9).jpeg",
+      "images": [
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (1).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (2).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (3).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (4).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (5).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (6).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (7).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (8).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (10).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (11).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (12).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (13).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (14).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (15).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (16).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (17).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (18).jpeg",
+        "/images/properties/jomtien-rimhad-condo/Jomtien Rimhad condo (19).jpeg"
+      ],
+      "location": {
+        "area": "Jomtien Beach",
+        "areaTh": "หาดจอมเทียน",
+        "nearBeach": true,
+        "walkableToBeach": true
+      },
+      "propertyType": "Studio Condo",
+      "propertyTypeTh": "คอนโดสตูดิโอ",
+      "highlights": [
+        "Beach Location",
+        "For Sale & Rent",
+        "Fully Furnished",
+        "Airbnb Ready"
+      ],
+      "highlightsTh": [
+        "ใกล้ทะเล",
+        "ขายและให้เช่า",
+        "เฟอร์นิเจอร์ครบ",
+        "ปล่อย Airbnb ได้"
+      ],
+      "rentalTerms": {
+        "shortTerm": true,
+        "longTerm": true,
+        "airbnbAllowed": true,
+        "allInclusive": false
+      },
+      "details": {
+        "bedrooms": 0,
+        "bathrooms": 1,
+        "hasKitchen": true,
+        "furnished": "fully",
+        "furnishedTh": "เฟอร์นิเจอร์ครบ",
+        "condition": "Ready to move in",
+        "conditionTh": "พร้อมเข้าอยู่"
+      },
+      "furniture": [
+        "TV",
+        "Refrigerator",
+        "Kitchen cabinets & counter",
+        "Furniture included"
+      ],
+      "furnitureTh": [
+        "ทีวี",
+        "ตู้เย็น",
+        "เคาน์เตอร์ครัว",
+        "เฟอร์นิเจอร์ครบ"
+      ],
+      "facilities": [
+        { "name": "Swimming pool", "nameTh": "สระว่ายน้ำ", "icon": "pool" },
+        { "name": "Fitness center", "nameTh": "ฟิตเนส", "icon": "fitness" },
+        { "name": "Restaurants & convenience stores", "nameTh": "ร้านอาหารและร้านสะดวกซื้อในอาคาร", "icon": "restaurant" },
+        { "name": "Secure building", "nameTh": "ระบบรักษาความปลอดภัย", "icon": "security" }
+      ],
+      "lifestyleHighlight": {
+        "title": "Beach Lifestyle Investment",
+        "titleTh": "การลงทุนไลฟ์สไตล์ริมทะเล",
+        "description": "Walk to Jomtien Beach, enjoy easy access to food, cafés, and daily needs. Great for living or investment with Airbnb potential.",
+        "descriptionTh": "เดินไปหาดจอมเทียนได้ ใกล้ร้านอาหาร คาเฟ่ และของกิน เหมาะอยู่อาศัยหรือลงทุนปล่อย Airbnb"
+      },
+      "perfectFor": [
+        "First-time buyers",
+        "Airbnb investment",
+        "Rental income",
+        "Beach lifestyle living"
+      ],
+      "perfectForTh": [
+        "ผู้ซื้อครั้งแรก",
+        "ลงทุน Airbnb",
+        "รายได้จากค่าเช่า",
+        "ชีวิตริมทะเล"
+      ],
+      "seo": {
+        "title": "Jomtien Rimhad Condo | Studio Near Beach | Sale 1.29M / Rent 13,000 THB",
+        "description": "Studio condo near Jomtien Beach for sale at 1.29M THB or rent at 13,000 THB/month. Fully furnished, pool, fitness. Perfect for investment or beach living."
+      }
+    },
+    {
+      "id": "sukhumvit-28-villa",
+      "slug": "sukhumvit-28-villa",
+      "title": "Sukhumvit 28 Villa",
+      "titleTh": "วิลล่าสุขุมวิท 28",
+      "subtitle": "Luxury City Villa with Pool | For Sale & Rent",
+      "subtitleTh": "วิลล่าหรูในเมือง พร้อมสระว่ายน้ำ | ขายและให้เช่า",
+      "status": "available",
+      "listingType": "both",
+      "price": {
+        "amount": 110000,
+        "currency": "THB",
+        "period": "month",
+        "formatted": "110,000"
+      },
+      "salePrice": {
+        "amount": 16000000,
+        "currency": "THB",
+        "formatted": "16M"
+      },
+      "featured": true,
+      "featuredImage": "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house featured image (19).jpeg",
+      "images": [
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (1).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (2).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (3).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (4).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (5).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (6).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (7).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (8).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (9).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (10).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (11).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (12).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (13).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (14).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (15).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (16).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (17).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (18).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (20).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (21).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (22).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (23).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (24).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (25).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (26).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (27).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (28).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (29).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (30).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (31).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (32).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (33).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (34).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (35).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (36).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (37).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (38).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (39).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (40).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (41).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (42).jpeg",
+        "/images/properties/sukhumvit-28-villa/Sukhumvit 28 Villa house (43).jpeg"
+      ],
+      "location": {
+        "area": "Sukhumvit Pattaya",
+        "areaTh": "สุขุมวิท พัทยา",
+        "nearBeach": false,
+        "walkableToBeach": false
+      },
+      "propertyType": "Villa",
+      "propertyTypeTh": "วิลล่า",
+      "highlights": [
+        "Private Pool",
+        "5 Bedrooms",
+        "Rooftop Terrace",
+        "Airbnb Ready"
+      ],
+      "highlightsTh": [
+        "สระว่ายน้ำส่วนตัว",
+        "5 ห้องนอน",
+        "ดาดฟ้าส่วนตัว",
+        "ปล่อย Airbnb ได้"
+      ],
+      "rentalTerms": {
+        "shortTerm": true,
+        "longTerm": true,
+        "airbnbAllowed": true,
+        "allInclusive": false
+      },
+      "details": {
+        "bedrooms": 5,
+        "bathrooms": 4,
+        "hasKitchen": true,
+        "furnished": "fully",
+        "furnishedTh": "เฟอร์นิเจอร์ครบ",
+        "condition": "Ready to move in",
+        "conditionTh": "พร้อมเข้าอยู่",
+        "parking": 3,
+        "landSize": "Large"
+      },
+      "furniture": [
+        "TV",
+        "Refrigerator",
+        "Washing machine",
+        "Full furniture & built-ins"
+      ],
+      "furnitureTh": [
+        "ทีวี",
+        "ตู้เย็น",
+        "เครื่องซักผ้า",
+        "เฟอร์นิเจอร์และบิลท์อินครบ"
+      ],
+      "facilities": [
+        { "name": "Private swimming pool", "nameTh": "สระว่ายน้ำส่วนตัว", "icon": "pool" },
+        { "name": "Spa tub / Jacuzzi", "nameTh": "อ่างสปา / จากุซซี่", "icon": "pool" },
+        { "name": "Rooftop terrace", "nameTh": "ดาดฟ้าส่วนตัว", "icon": "beach" },
+        { "name": "BBQ terrace", "nameTh": "พื้นที่ทำ BBQ", "icon": "restaurant" },
+        { "name": "3 parking spaces", "nameTh": "ที่จอดรถ 3 คัน", "icon": "security" }
+      ],
+      "lifestyleHighlight": {
+        "title": "Luxury Family Living",
+        "titleTh": "ชีวิตครอบครัวหรูหรา",
+        "description": "Spacious city villa with private pool, spa tub, and rooftop terrace. Close to restaurants, shops & convenience stores. Large land suitable for future expansion.",
+        "descriptionTh": "วิลล่าในเมืองกว้างขวาง พร้อมสระว่ายน้ำส่วนตัว อ่างสปา และดาดฟ้า ใกล้ร้านอาหาร ร้านค้า ที่ดินขนาดใหญ่เหมาะต่อเติม"
+      },
+      "perfectFor": [
+        "Luxury family living",
+        "Airbnb / short-term rental investment",
+        "Long-term rental for executives or expats",
+        "Buyers looking for land value + future development"
+      ],
+      "perfectForTh": [
+        "อยู่อาศัยระดับลักชัวรี",
+        "นักลงทุนปล่อยเช่า / Airbnb",
+        "ครอบครัวใหญ่ หรือผู้บริหาร",
+        "ผู้ที่ต้องการบ้านพร้อมมูลค่าที่ดินในอนาคต"
+      ],
+      "seo": {
+        "title": "Sukhumvit 28 Villa | Luxury 5BR Pool Villa | Sale 16M / Rent 110,000 THB",
+        "description": "Luxury 5 bedroom city villa with private pool, jacuzzi, rooftop terrace. For sale at 16M THB or rent at 110,000 THB/month. Airbnb ready, 3 parking spaces."
+      }
+    },
+    {
+      "id": "central-house",
+      "slug": "central-house",
+      "title": "Central House",
+      "titleTh": "บ้านเซ็นทรัล",
+      "subtitle": "City House – Ready to Move In | For Sale & Rent",
+      "subtitleTh": "บ้านในเมือง พร้อมเข้าอยู่ | ขายและให้เช่า",
+      "status": "available",
+      "listingType": "both",
+      "price": {
+        "amount": 25000,
+        "currency": "THB",
+        "period": "month",
+        "formatted": "25,000"
+      },
+      "salePrice": {
+        "amount": 3900000,
+        "currency": "THB",
+        "formatted": "3.9M"
+      },
+      "featured": true,
+      "featuredImage": "/images/properties/central-house/Central house featured image (11).jpeg",
+      "images": [
+        "/images/properties/central-house/Central house (1).jpeg",
+        "/images/properties/central-house/Central house (2).jpeg",
+        "/images/properties/central-house/Central house (3).jpeg",
+        "/images/properties/central-house/Central house (4).jpeg",
+        "/images/properties/central-house/Central house (5).jpeg",
+        "/images/properties/central-house/Central house (6).jpeg",
+        "/images/properties/central-house/Central house (7).jpeg",
+        "/images/properties/central-house/Central house (8).jpeg",
+        "/images/properties/central-house/Central house (9).jpeg",
+        "/images/properties/central-house/Central house (10).jpeg",
+        "/images/properties/central-house/Central house (12).jpeg",
+        "/images/properties/central-house/Central house (13).jpeg",
+        "/images/properties/central-house/Central house (14).jpeg",
+        "/images/properties/central-house/Central house (15).jpeg",
+        "/images/properties/central-house/Central house (16).jpeg",
+        "/images/properties/central-house/Central house (17).jpeg",
+        "/images/properties/central-house/Central house (18).jpeg",
+        "/images/properties/central-house/Central house (19).jpeg",
+        "/images/properties/central-house/Central house (20).jpeg",
+        "/images/properties/central-house/Central house (21).jpeg",
+        "/images/properties/central-house/Central house (22).jpeg"
+      ],
+      "location": {
+        "area": "Central Pattaya",
+        "areaTh": "พัทยากลาง",
+        "nearBeach": false,
+        "walkableToBeach": false
+      },
+      "propertyType": "House",
+      "propertyTypeTh": "บ้าน",
+      "highlights": [
+        "City Location",
+        "For Sale & Rent",
+        "Fully Furnished",
+        "Airbnb Friendly"
+      ],
+      "highlightsTh": [
+        "ทำเลในเมือง",
+        "ขายและให้เช่า",
+        "เฟอร์นิเจอร์ครบ",
+        "ปล่อย Airbnb ได้"
+      ],
+      "rentalTerms": {
+        "shortTerm": true,
+        "longTerm": true,
+        "airbnbAllowed": true,
+        "allInclusive": false
+      },
+      "details": {
+        "bedrooms": 2,
+        "bathrooms": 3,
+        "hasKitchen": true,
+        "furnished": "fully",
+        "furnishedTh": "เฟอร์นิเจอร์ครบ",
+        "condition": "Ready to move in",
+        "conditionTh": "พร้อมเข้าอยู่",
+        "parking": 1
+      },
+      "furniture": [
+        "TV",
+        "Refrigerator",
+        "Washing machine",
+        "Furniture & built-ins"
+      ],
+      "furnitureTh": [
+        "ทีวี",
+        "ตู้เย็น",
+        "เครื่องซักผ้า",
+        "เฟอร์นิเจอร์และบิลท์อิน"
+      ],
+      "facilities": [
+        { "name": "Private terrace for BBQ", "nameTh": "ระเบียงสำหรับ BBQ", "icon": "restaurant" },
+        { "name": "Big living space", "nameTh": "ห้องนั่งเล่นกว้าง", "icon": "beach" },
+        { "name": "Separate dining area", "nameTh": "แยกโซนทานอาหาร", "icon": "restaurant" },
+        { "name": "1 parking spot", "nameTh": "ที่จอดรถ 1 คัน", "icon": "security" }
+      ],
+      "lifestyleHighlight": {
+        "title": "Convenient City Living",
+        "titleTh": "ชีวิตสะดวกในเมือง",
+        "description": "City house with convenient location near restaurants, shops & stores. Ready to move in – just bring your bag. Perfect for families, couples, or city lifestyle lovers.",
+        "descriptionTh": "บ้านในเมือง เดินทางสะดวก ใกล้ร้านอาหาร ร้านค้า พร้อมเข้าอยู่ แค่กระเป๋าใบเดียวก็เข้าได้"
+      },
+      "perfectFor": [
+        "Living or investment",
+        "Airbnb or long-term rental",
+        "Families, couples, or city lifestyle lovers"
+      ],
+      "perfectForTh": [
+        "อยู่อาศัยหรือลงทุน",
+        "ปล่อยเช่า Airbnb หรือระยะยาว",
+        "ครอบครัว คู่รัก หรือคนทำงานในเมือง"
+      ],
+      "seo": {
+        "title": "Central House Pattaya | 2BR City House | Sale 3.9M / Rent 25,000 THB",
+        "description": "2 bedroom city house in Pattaya for sale at 3.9M THB or rent at 25,000 THB/month. Fully furnished, ensuite bathrooms, terrace. Airbnb friendly, convenient location."
+      }
     }
   ],
   "settings": {
