@@ -49,6 +49,15 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
     <div class="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1.5 rounded-full text-sm font-medium">
       <span id="current-image-index">1</span> / {allImages.length}
     </div>
+
+    <!-- Watermark -->
+    <div class="absolute bottom-4 left-4 pointer-events-none">
+      <img
+        src="/images/My Pattaya Life Logo.png"
+        alt=""
+        class="h-8 md:h-10 w-auto opacity-70"
+      />
+    </div>
   </div>
 
   <!-- Thumbnail Grid -->
@@ -100,7 +109,17 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
       </svg>
     </button>
 
-    <img id="lightbox-image" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain" />
+    <div class="relative">
+      <img id="lightbox-image" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain" />
+      <!-- Lightbox Watermark -->
+      <div class="absolute bottom-4 left-4 pointer-events-none">
+        <img
+          src="/images/My Pattaya Life Logo.png"
+          alt=""
+          class="h-10 md:h-12 w-auto opacity-70"
+        />
+      </div>
+    </div>
 
     <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm">
       <span id="lightbox-counter"></span>
