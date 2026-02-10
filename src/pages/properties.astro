@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PropertyCard from '../components/PropertyCard.astro';
+import propertiesData from '../../content/properties.json';
+
+const { properties } = propertiesData;
+
+const pageTitle = "Properties for Rent & Sale | Pattaya Real Estate Listings";
+const pageDescription = "Browse luxury properties for rent and sale in Pattaya. Studios, condos, villas with sea views, pools, and premium amenities. All-inclusive rentals available.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Pattaya Property Listings",
+  "description": pageDescription,
+  "numberOfItems": properties.length,
+  "itemListElement": properties.map((property, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "Accommodation",
+      "name": property.title,
+      "description": property.subtitle,
+      "image": property.featuredImage,
+      "url": `https://mypattaya.life/properties/${property.slug}`
+    }
+  }))
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  structuredData={structuredData}
+>
+  <!-- Hero Section -->
+  <section class="relative pt-16 pb-20 bg-primary-900 overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img
+        src="/images/house-promo-interior.webp"
+        alt="Pattaya property listings"
+        class="w-full h-full object-cover"
+        aria-hidden="true"
+      />
+      <div class="absolute inset-0 bg-primary-900/80"></div>
+    </div>
+
+    <div class="container-custom relative z-10">
+      <div class="max-w-3xl">
+        <span class="badge bg-secondary-400 text-primary-900 mb-4">Property Listings</span>
+        <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Find Your Perfect Property in Pattaya
+        </h1>
+        <p class="text-xl text-primary-200 mb-6">
+          Discover luxury rentals and properties for sale. From sea-view studios to beachfront villas — we have the perfect home for you.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-sm text-white">All-Inclusive Options</span>
+          <span class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-sm text-white">Sea Views</span>
+          <span class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 py-1 text-sm text-white">Fully Furnished</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-auto">
+        <path d="M0 120L48 110C96 100 192 80 288 70C384 60 480 60 576 65C672 70 768 80 864 85C960 90 1056 90 1152 85C1248 80 1344 70 1392 65L1440 60V120H0Z" fill="#fdfdf9"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Properties Grid -->
+  <section class="section bg-sand-50">
+    <div class="container-custom">
+      <!-- Filter Bar (placeholder for future) -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+        <p class="text-gray-600">
+          Showing <span class="font-semibold text-gray-900">{properties.length}</span> properties
+        </p>
+        <!-- Future: Add filters here -->
+      </div>
+
+      <!-- Properties Grid -->
+      {properties.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {properties.map((property, index) => (
+            <div class="fade-up" style={`animation-delay: ${index * 100}ms`}>
+              <PropertyCard property={property} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-16">
+          <div class="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-xl font-semibold text-gray-900 mb-2">No Properties Listed Yet</h3>
+          <p class="text-gray-600 mb-6">Check back soon for new listings!</p>
+          <a href="/contact" class="btn btn-primary">Contact Us for Availability</a>
+        </div>
+      )}
+
+      <!-- CTA Section -->
+      <div class="mt-16 bg-primary-50 rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          Looking for Something Specific?
+        </h2>
+        <p class="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+          Contact us with your requirements and we'll help you find the perfect property in Pattaya.
+        </p>
+        <a href="/contact" class="btn btn-primary">
+          Get in Touch
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

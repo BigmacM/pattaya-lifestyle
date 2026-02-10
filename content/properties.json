@@ -1,0 +1,82 @@
+{
+  "properties": [
+    {
+      "id": "bayphere-hotel",
+      "slug": "bayphere-hotel",
+      "title": "Bayphere Hotel",
+      "subtitle": "Luxury Studio Hotel with Sea View | All-Inclusive Rental",
+      "status": "available",
+      "listingType": "rent",
+      "price": {
+        "amount": 25000,
+        "currency": "THB",
+        "period": "month",
+        "formatted": "25,000"
+      },
+      "featured": true,
+      "featuredImage": "/images/properties/bayphere-hotel/featured.webp",
+      "images": [],
+      "location": {
+        "area": "Pattaya",
+        "nearBeach": true,
+        "walkableToBeach": true
+      },
+      "propertyType": "Studio",
+      "highlights": [
+        "Sea View",
+        "All Inclusive",
+        "Fully Furnished",
+        "Hotel Lifestyle"
+      ],
+      "rentalTerms": {
+        "shortTerm": true,
+        "longTerm": true,
+        "airbnbAllowed": true,
+        "allInclusive": true,
+        "utilitiesIncluded": ["Electricity", "Water"]
+      },
+      "details": {
+        "bedrooms": 0,
+        "bathrooms": 1,
+        "hasKitchen": true,
+        "furnished": "fully",
+        "condition": "Ready to move in"
+      },
+      "furniture": [
+        "TV",
+        "Refrigerator",
+        "Kitchen counter & cabinets",
+        "Full furniture set"
+      ],
+      "facilities": [
+        { "name": "Swimming pool", "icon": "pool" },
+        { "name": "Fitness center", "icon": "fitness" },
+        { "name": "Coffee shop", "icon": "coffee" },
+        { "name": "Italian restaurant", "icon": "restaurant" },
+        { "name": "Breakfast service", "icon": "breakfast" },
+        { "name": "Beach club", "icon": "beach" },
+        { "name": "Hotel-style security & service", "icon": "security" }
+      ],
+      "lifestyleHighlight": {
+        "title": "Luxury Hotel Lifestyle",
+        "description": "Live a luxury hotel lifestyle with everything you need in one place — no bills to manage, no extra charges, just move in and enjoy."
+      },
+      "perfectFor": [
+        "Expats",
+        "Digital nomads",
+        "Long-stay tourists",
+        "Airbnb guests",
+        "Anyone who wants easy, luxury living"
+      ],
+      "seo": {
+        "title": "Bayphere Hotel Studio | Sea View Luxury Rental Pattaya | 25,000 THB/month",
+        "description": "Luxury studio hotel with sea view in Pattaya. All-inclusive rent at 25,000 THB/month. Pool, fitness, beach club, restaurant. Perfect for expats and digital nomads."
+      }
+    }
+  ],
+  "settings": {
+    "currency": "THB",
+    "defaultListingType": "rent",
+    "contactForViewing": true
+  }
+}

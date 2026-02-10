@@ -1,0 +1,159 @@
+---
+interface Props {
+  property: {
+    slug: string;
+    title: string;
+    subtitle: string;
+    status: string;
+    listingType: string;
+    price: {
+      amount: number;
+      currency: string;
+      period: string;
+      formatted: string;
+    };
+    featuredImage: string;
+    location: {
+      area: string;
+      nearBeach?: boolean;
+      walkableToBeach?: boolean;
+    };
+    propertyType: string;
+    highlights: string[];
+    details: {
+      bedrooms: number;
+      bathrooms: number;
+      hasKitchen: boolean;
+    };
+    rentalTerms?: {
+      allInclusive?: boolean;
+    };
+  };
+}
+
+const { property } = Astro.props;
+---
+
+<a href={`/properties/${property.slug}`} class="group block h-full">
+  <div class="bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden border border-gray-100 h-full flex flex-col card-lift">
+    <!-- Image -->
+    <div class="relative h-56 overflow-hidden">
+      <img
+        src={property.featuredImage}
+        alt={property.title}
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        onerror="this.src='/images/house-promo-interior.webp'"
+      />
+
+      <!-- Status Badge -->
+      <div class="absolute top-4 left-4 z-10">
+        <span class:list={[
+          'px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide',
+          property.status === 'available' ? 'bg-green-500 text-white' : 'bg-gray-500 text-white'
+        ]}>
+          {property.status === 'available' ? 'Available' : property.status}
+        </span>
+      </div>
+
+      <!-- Price Badge -->
+      <div class="absolute bottom-4 right-4 z-10">
+        <div class="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg">
+          <span class="text-xl font-bold text-primary-700">{property.price.formatted}</span>
+          <span class="text-sm text-gray-600"> {property.price.currency}/{property.price.period}</span>
+        </div>
+      </div>
+
+      <!-- All Inclusive Badge -->
+      {property.rentalTerms?.allInclusive && (
+        <div class="absolute top-4 right-4 z-10">
+          <span class="bg-secondary-400 text-primary-900 px-2 py-1 rounded-full text-xs font-semibold">
+            All Inclusive
+          </span>
+        </div>
+      )}
+    </div>
+
+    <!-- Content -->
+    <div class="p-5 flex flex-col flex-1">
+      <!-- Type & Location -->
+      <div class="flex items-center gap-2 text-sm text-gray-500 mb-2">
+        <span class="font-medium text-primary-600">{property.propertyType}</span>
+        <span>•</span>
+        <span>{property.location.area}</span>
+        {property.location.walkableToBeach && (
+          <>
+            <span>•</span>
+            <span class="flex items-center gap-1">
+              <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12a8 8 0 01-8 8m8-8a8 8 0 00-8-8m8 8h-8m0 8a8 8 0 01-8-8m8 8v-8m-8 8a8 8 0 008-8m-8 8h8"/>
+              </svg>
+              Beach
+            </span>
+          </>
+        )}
+      </div>
+
+      <!-- Title -->
+      <h3 class="font-display text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-700 transition-colors">
+        {property.title}
+      </h3>
+
+      <!-- Subtitle -->
+      <p class="text-sm text-gray-600 mb-4 line-clamp-2">
+        {property.subtitle}
+      </p>
+
+      <!-- Highlights -->
+      <div class="flex flex-wrap gap-2 mb-4 flex-1">
+        {property.highlights.slice(0, 4).map((highlight) => (
+          <span class="bg-primary-50 text-primary-700 px-2 py-1 rounded-lg text-xs font-medium">
+            {highlight}
+          </span>
+        ))}
+      </div>
+
+      <!-- Details -->
+      <div class="flex items-center gap-4 pt-4 border-t border-gray-100 mt-auto">
+        {property.details.bedrooms > 0 && (
+          <div class="flex items-center gap-1.5 text-gray-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+            </svg>
+            <span class="text-sm">{property.details.bedrooms} Bed</span>
+          </div>
+        )}
+        {property.details.bedrooms === 0 && (
+          <div class="flex items-center gap-1.5 text-gray-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+            </svg>
+            <span class="text-sm">Studio</span>
+          </div>
+        )}
+        <div class="flex items-center gap-1.5 text-gray-600">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/>
+          </svg>
+          <span class="text-sm">{property.details.bathrooms} Bath</span>
+        </div>
+        {property.details.hasKitchen && (
+          <div class="flex items-center gap-1.5 text-gray-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+            </svg>
+            <span class="text-sm">Kitchen</span>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</a>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
