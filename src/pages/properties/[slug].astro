@@ -13,6 +13,7 @@ export function getStaticPaths() {
 
 const { property } = Astro.props;
 const { businessInfo } = businessData;
+const t = propertiesData.translations;
 
 // Build structured data for the property
 const structuredData = {
@@ -60,17 +61,37 @@ const facilityIcons: Record<string, string> = {
   <!-- Breadcrumb -->
   <section class="bg-sand-50 py-4 border-b border-gray-200">
     <div class="container-custom">
-      <nav class="flex items-center gap-2 text-sm">
-        <a href="/" class="text-gray-500 hover:text-primary-700 transition-colors">Home</a>
-        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-        </svg>
-        <a href="/properties" class="text-gray-500 hover:text-primary-700 transition-colors">Properties</a>
-        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-        </svg>
-        <span class="text-gray-900 font-medium">{property.title}</span>
-      </nav>
+      <div class="flex items-center justify-between">
+        <nav class="flex items-center gap-2 text-sm">
+          <a href="/" class="text-gray-500 hover:text-primary-700 transition-colors">Home</a>
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <a href="/properties" class="text-gray-500 hover:text-primary-700 transition-colors">Properties</a>
+          <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+          <span class="text-gray-900 font-medium" data-en={property.title} data-th={property.titleTh}>{property.title}</span>
+        </nav>
+
+        <!-- Language Toggle -->
+        <div class="flex items-center gap-2">
+          <button
+            id="lang-en"
+            class="lang-btn px-3 py-1.5 rounded-lg text-sm font-medium transition-all bg-primary-700 text-white"
+            data-lang="en"
+          >
+            EN
+          </button>
+          <button
+            id="lang-th"
+            class="lang-btn px-3 py-1.5 rounded-lg text-sm font-medium transition-all bg-gray-200 text-gray-700 hover:bg-gray-300"
+            data-lang="th"
+          >
+            TH ไทย
+          </button>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -94,60 +115,66 @@ const facilityIcons: Record<string, string> = {
                 'px-3 py-1 rounded-full text-xs font-semibold uppercase',
                 property.status === 'available' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'
               ]}>
-                {property.status === 'available' ? 'Available' : property.status}
+                <span data-en={t.en.available} data-th={t.th.available}>{t.en.available}</span>
               </span>
               {property.rentalTerms?.allInclusive && (
                 <span class="bg-secondary-100 text-secondary-700 px-3 py-1 rounded-full text-xs font-semibold">
-                  All Inclusive
+                  <span data-en={t.en.allInclusive} data-th={t.th.allInclusive}>{t.en.allInclusive}</span>
                 </span>
               )}
             </div>
-            <h1 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+            <h1 class="font-display text-2xl md:text-3xl font-bold text-gray-900 mb-2" data-en={property.title} data-th={property.titleTh}>
               {property.title}
             </h1>
-            <p class="text-lg text-gray-600 mb-4">{property.subtitle}</p>
+            <p class="text-lg text-gray-600 mb-4" data-en={property.subtitle} data-th={property.subtitleTh}>{property.subtitle}</p>
             <div class="flex items-baseline gap-2 mb-6">
               <span class="text-3xl font-bold text-primary-700">{property.price.formatted}</span>
-              <span class="text-gray-600">{property.price.currency} / {property.price.period}</span>
+              <span class="text-gray-600">{property.price.currency} / <span data-en="month" data-th="เดือน">month</span></span>
             </div>
           </div>
 
           <!-- Property Details -->
           <div class="bg-white rounded-2xl p-6 shadow-soft mt-6">
-            <h2 class="font-display text-xl font-semibold text-gray-900 mb-4">Property Details</h2>
+            <h2 class="font-display text-xl font-semibold text-gray-900 mb-4" data-en={t.en.propertyDetails} data-th={t.th.propertyDetails}>{t.en.propertyDetails}</h2>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
               <div class="text-center p-4 bg-gray-50 rounded-xl">
                 <div class="text-2xl font-bold text-primary-700">
-                  {property.details.bedrooms === 0 ? 'Studio' : property.details.bedrooms}
+                  <span data-en={property.details.bedrooms === 0 ? 'Studio' : property.details.bedrooms} data-th={property.details.bedrooms === 0 ? t.th.studio : property.details.bedrooms}>
+                    {property.details.bedrooms === 0 ? 'Studio' : property.details.bedrooms}
+                  </span>
                 </div>
-                <div class="text-sm text-gray-600">{property.details.bedrooms === 0 ? 'Type' : 'Bedrooms'}</div>
+                <div class="text-sm text-gray-600" data-en={property.details.bedrooms === 0 ? 'Type' : 'Bedrooms'} data-th={property.details.bedrooms === 0 ? 'ประเภท' : t.th.bedrooms}>
+                  {property.details.bedrooms === 0 ? 'Type' : 'Bedrooms'}
+                </div>
               </div>
               <div class="text-center p-4 bg-gray-50 rounded-xl">
                 <div class="text-2xl font-bold text-primary-700">{property.details.bathrooms}</div>
-                <div class="text-sm text-gray-600">Bathrooms</div>
+                <div class="text-sm text-gray-600" data-en={t.en.bathrooms} data-th={t.th.bathrooms}>{t.en.bathrooms}</div>
               </div>
               <div class="text-center p-4 bg-gray-50 rounded-xl">
-                <div class="text-2xl font-bold text-primary-700">{property.details.hasKitchen ? 'Yes' : 'No'}</div>
-                <div class="text-sm text-gray-600">Kitchen</div>
+                <div class="text-2xl font-bold text-primary-700" data-en={property.details.hasKitchen ? t.en.yes : t.en.no} data-th={property.details.hasKitchen ? t.th.yes : t.th.no}>
+                  {property.details.hasKitchen ? 'Yes' : 'No'}
+                </div>
+                <div class="text-sm text-gray-600" data-en={t.en.kitchen} data-th={t.th.kitchen}>{t.en.kitchen}</div>
               </div>
               <div class="text-center p-4 bg-gray-50 rounded-xl">
-                <div class="text-2xl font-bold text-primary-700 capitalize">{property.details.furnished}</div>
-                <div class="text-sm text-gray-600">Furnished</div>
+                <div class="text-2xl font-bold text-primary-700 capitalize" data-en={property.details.furnished} data-th={property.details.furnishedTh}>{property.details.furnished}</div>
+                <div class="text-sm text-gray-600" data-en={t.en.furnished} data-th={t.th.furnished}>{t.en.furnished}</div>
               </div>
             </div>
 
             <!-- Rental Terms -->
             {property.rentalTerms && (
               <div class="border-t border-gray-100 pt-6">
-                <h3 class="font-semibold text-gray-900 mb-3">Rental Terms</h3>
+                <h3 class="font-semibold text-gray-900 mb-3" data-en={t.en.rentalTerms} data-th={t.th.rentalTerms}>{t.en.rentalTerms}</h3>
                 <div class="flex flex-wrap gap-3">
                   {property.rentalTerms.shortTerm && (
                     <span class="flex items-center gap-2 bg-green-50 text-green-700 px-3 py-2 rounded-lg text-sm">
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                       </svg>
-                      Short-term OK
+                      <span data-en={t.en.shortTermOK} data-th={t.th.shortTermOK}>{t.en.shortTermOK}</span>
                     </span>
                   )}
                   {property.rentalTerms.longTerm && (
@@ -155,7 +182,7 @@ const facilityIcons: Record<string, string> = {
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                       </svg>
-                      Long-term OK
+                      <span data-en={t.en.longTermOK} data-th={t.th.longTermOK}>{t.en.longTermOK}</span>
                     </span>
                   )}
                   {property.rentalTerms.airbnbAllowed && (
@@ -163,7 +190,7 @@ const facilityIcons: Record<string, string> = {
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                       </svg>
-                      Airbnb Allowed
+                      <span data-en={t.en.airbnbAllowed} data-th={t.th.airbnbAllowed}>{t.en.airbnbAllowed}</span>
                     </span>
                   )}
                   {property.rentalTerms.allInclusive && (
@@ -171,7 +198,7 @@ const facilityIcons: Record<string, string> = {
                       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                       </svg>
-                      All Inclusive (Utilities Included)
+                      <span data-en={t.en.utilitiesIncluded} data-th={t.th.utilitiesIncluded}>{t.en.utilitiesIncluded}</span>
                     </span>
                   )}
                 </div>
@@ -182,14 +209,14 @@ const facilityIcons: Record<string, string> = {
           <!-- Furniture & Appliances -->
           {property.furniture && property.furniture.length > 0 && (
             <div class="bg-white rounded-2xl p-6 shadow-soft mt-6">
-              <h2 class="font-display text-xl font-semibold text-gray-900 mb-4">Furniture & Appliances</h2>
+              <h2 class="font-display text-xl font-semibold text-gray-900 mb-4" data-en={t.en.furnitureAppliances} data-th={t.th.furnitureAppliances}>{t.en.furnitureAppliances}</h2>
               <ul class="grid grid-cols-2 gap-3">
-                {property.furniture.map((item) => (
+                {property.furniture.map((item, index) => (
                   <li class="flex items-center gap-2">
                     <svg class="w-5 h-5 text-primary-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                     </svg>
-                    <span class="text-gray-700">{item}</span>
+                    <span class="text-gray-700" data-en={item} data-th={property.furnitureTh?.[index] || item}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -199,12 +226,12 @@ const facilityIcons: Record<string, string> = {
           <!-- Facilities -->
           {property.facilities && property.facilities.length > 0 && (
             <div class="bg-white rounded-2xl p-6 shadow-soft mt-6">
-              <h2 class="font-display text-xl font-semibold text-gray-900 mb-4">Hotel Facilities</h2>
+              <h2 class="font-display text-xl font-semibold text-gray-900 mb-4" data-en={t.en.hotelFacilities} data-th={t.th.hotelFacilities}>{t.en.hotelFacilities}</h2>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {property.facilities.map((facility) => (
                   <div class="flex items-center gap-3 p-3 bg-primary-50 rounded-xl">
                     <div class="w-10 h-10 rounded-lg bg-primary-100 text-primary-700 flex items-center justify-center flex-shrink-0" set:html={facilityIcons[facility.icon] || facilityIcons.security} />
-                    <span class="text-gray-700 font-medium text-sm">{facility.name}</span>
+                    <span class="text-gray-700 font-medium text-sm" data-en={facility.name} data-th={facility.nameTh}>{facility.name}</span>
                   </div>
                 ))}
               </div>
@@ -214,19 +241,19 @@ const facilityIcons: Record<string, string> = {
           <!-- Lifestyle Highlight -->
           {property.lifestyleHighlight && (
             <div class="bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl p-6 md:p-8 shadow-soft mt-6 text-white">
-              <h2 class="font-display text-xl font-semibold mb-3">{property.lifestyleHighlight.title}</h2>
-              <p class="text-primary-100 mb-6">{property.lifestyleHighlight.description}</p>
+              <h2 class="font-display text-xl font-semibold mb-3" data-en={property.lifestyleHighlight.title} data-th={property.lifestyleHighlight.titleTh}>{property.lifestyleHighlight.title}</h2>
+              <p class="text-primary-100 mb-6" data-en={property.lifestyleHighlight.description} data-th={property.lifestyleHighlight.descriptionTh}>{property.lifestyleHighlight.description}</p>
 
               {property.perfectFor && property.perfectFor.length > 0 && (
                 <div>
-                  <h3 class="font-semibold mb-3">Perfect For:</h3>
+                  <h3 class="font-semibold mb-3" data-en={t.en.perfectFor + ":"} data-th={t.th.perfectFor + ":"}>Perfect For:</h3>
                   <ul class="grid grid-cols-2 gap-2">
-                    {property.perfectFor.map((item) => (
+                    {property.perfectFor.map((item, index) => (
                       <li class="flex items-center gap-2">
                         <svg class="w-4 h-4 text-secondary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                         </svg>
-                        <span class="text-sm">{item}</span>
+                        <span class="text-sm" data-en={item} data-th={property.perfectForTh?.[index] || item}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -246,19 +273,19 @@ const facilityIcons: Record<string, string> = {
                   'px-3 py-1 rounded-full text-xs font-semibold uppercase',
                   property.status === 'available' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'
                 ]}>
-                  {property.status === 'available' ? 'Available' : property.status}
+                  <span data-en={t.en.available} data-th={t.th.available}>{t.en.available}</span>
                 </span>
                 {property.rentalTerms?.allInclusive && (
                   <span class="bg-secondary-100 text-secondary-700 px-2 py-1 rounded-full text-xs font-semibold">
-                    All Inclusive
+                    <span data-en={t.en.allInclusive} data-th={t.th.allInclusive}>{t.en.allInclusive}</span>
                   </span>
                 )}
               </div>
-              <h1 class="font-display text-2xl font-bold text-gray-900 mb-2">{property.title}</h1>
-              <p class="text-gray-600 mb-4">{property.subtitle}</p>
+              <h1 class="font-display text-2xl font-bold text-gray-900 mb-2" data-en={property.title} data-th={property.titleTh}>{property.title}</h1>
+              <p class="text-gray-600 mb-4" data-en={property.subtitle} data-th={property.subtitleTh}>{property.subtitle}</p>
               <div class="flex items-baseline gap-2 pb-4 border-b border-gray-100">
                 <span class="text-3xl font-bold text-primary-700">{property.price.formatted}</span>
-                <span class="text-gray-600">{property.price.currency} / {property.price.period}</span>
+                <span class="text-gray-600">{property.price.currency} / <span data-en="month" data-th="เดือน">month</span></span>
               </div>
 
               <!-- Location -->
@@ -268,9 +295,9 @@ const facilityIcons: Record<string, string> = {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
-                  <span>{property.location.area}</span>
+                  <span data-en={property.location.area} data-th={property.location.areaTh}>{property.location.area}</span>
                   {property.location.walkableToBeach && (
-                    <span class="text-blue-600 text-sm">• Walkable to beach</span>
+                    <span class="text-blue-600 text-sm">• <span data-en={t.en.walkableToBeach} data-th={t.th.walkableToBeach}>{t.en.walkableToBeach}</span></span>
                   )}
                 </div>
               </div>
@@ -278,8 +305,8 @@ const facilityIcons: Record<string, string> = {
               <!-- Highlights -->
               <div class="py-4">
                 <div class="flex flex-wrap gap-2">
-                  {property.highlights.map((highlight) => (
-                    <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm font-medium">
+                  {property.highlights.map((highlight, index) => (
+                    <span class="bg-primary-50 text-primary-700 px-3 py-1 rounded-full text-sm font-medium" data-en={highlight} data-th={property.highlightsTh?.[index] || highlight}>
                       {highlight}
                     </span>
                   ))}
@@ -289,8 +316,8 @@ const facilityIcons: Record<string, string> = {
 
             <!-- Contact Card -->
             <div class="bg-white rounded-2xl p-6 shadow-soft">
-              <h3 class="font-display text-lg font-semibold text-gray-900 mb-4">Interested in this property?</h3>
-              <p class="text-gray-600 text-sm mb-6">Contact us for availability, viewing, or more information.</p>
+              <h3 class="font-display text-lg font-semibold text-gray-900 mb-4" data-en={t.en.interestedInProperty} data-th={t.th.interestedInProperty}>{t.en.interestedInProperty}</h3>
+              <p class="text-gray-600 text-sm mb-6" data-en={t.en.contactForAvailability} data-th={t.th.contactForAvailability}>{t.en.contactForAvailability}</p>
 
               <div class="space-y-3">
                 <a
@@ -302,7 +329,7 @@ const facilityIcons: Record<string, string> = {
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                   </svg>
-                  WhatsApp Us
+                  <span data-en={t.en.whatsappUs} data-th={t.th.whatsappUs}>{t.en.whatsappUs}</span>
                 </a>
 
                 <a
@@ -314,11 +341,11 @@ const facilityIcons: Record<string, string> = {
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.349 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
                   </svg>
-                  LINE Chat
+                  <span data-en={t.en.lineChat} data-th={t.th.lineChat}>{t.en.lineChat}</span>
                 </a>
 
                 <a href="/contact" class="btn btn-outline w-full">
-                  Contact Form
+                  <span data-en={t.en.contactForm} data-th={t.th.contactForm}>{t.en.contactForm}</span>
                 </a>
 
                 <a href={`tel:${businessInfo.phone?.replace(/[-\s]/g, '')}`} class="btn btn-outline w-full flex items-center justify-center gap-2">
@@ -342,8 +369,52 @@ const facilityIcons: Record<string, string> = {
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
         </svg>
-        Back to All Properties
+        <span data-en={t.en.backToAllProperties} data-th={t.th.backToAllProperties}>{t.en.backToAllProperties}</span>
       </a>
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  // Language Toggle Script
+  let currentLang = 'en';
+
+  function setLanguage(lang: string) {
+    currentLang = lang;
+    localStorage.setItem('propertyLang', lang);
+
+    // Update all translatable elements
+    document.querySelectorAll('[data-en][data-th]').forEach((el) => {
+      const text = el.getAttribute(`data-${lang}`);
+      if (text) {
+        el.textContent = text;
+      }
+    });
+
+    // Update button styles
+    const enBtn = document.getElementById('lang-en');
+    const thBtn = document.getElementById('lang-th');
+
+    if (lang === 'en') {
+      enBtn?.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+      enBtn?.classList.add('bg-primary-700', 'text-white');
+      thBtn?.classList.remove('bg-primary-700', 'text-white');
+      thBtn?.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+    } else {
+      thBtn?.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+      thBtn?.classList.add('bg-primary-700', 'text-white');
+      enBtn?.classList.remove('bg-primary-700', 'text-white');
+      enBtn?.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+    }
+  }
+
+  // Initialize from localStorage or default to English
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('propertyLang') || 'en';
+    setLanguage(savedLang);
+  });
+
+  // Add event listeners
+  document.getElementById('lang-en')?.addEventListener('click', () => setLanguage('en'));
+  document.getElementById('lang-th')?.addEventListener('click', () => setLanguage('th'));
+</script>

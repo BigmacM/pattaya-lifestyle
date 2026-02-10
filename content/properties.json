@@ -4,7 +4,9 @@
       "id": "bayphere-hotel",
       "slug": "bayphere-hotel",
       "title": "Bayphere Hotel",
+      "titleTh": "Bayphere Hotel",
       "subtitle": "Luxury Studio Hotel with Sea View | All-Inclusive Rental",
+      "subtitleTh": "สตูดิโอโรงแรมหรู วิวทะเล | ค่าเช่ารวมทุกอย่าง",
       "status": "available",
       "listingType": "rent",
       "price": {
@@ -14,33 +16,68 @@
         "formatted": "25,000"
       },
       "featured": true,
-      "featuredImage": "/images/properties/bayphere-hotel/featured.webp",
-      "images": [],
+      "featuredImage": "/images/properties/bayphere-hotel/Bayphere Hotel Featured Image (23).jpeg",
+      "images": [
+        "/images/properties/bayphere-hotel/Bayphere Hotel (1).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (2).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (3).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (4).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (5).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (6).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (7).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (8).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (9).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (10).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (11).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (12).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (13).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (14).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (15).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (16).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (17).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (18).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (19).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (20).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (21).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (22).jpeg",
+        "/images/properties/bayphere-hotel/Bayphere Hotel (24).jpeg"
+      ],
       "location": {
         "area": "Pattaya",
+        "areaTh": "พัทยา",
         "nearBeach": true,
         "walkableToBeach": true
       },
       "propertyType": "Studio",
+      "propertyTypeTh": "สตูดิโอ",
       "highlights": [
         "Sea View",
         "All Inclusive",
         "Fully Furnished",
         "Hotel Lifestyle"
       ],
+      "highlightsTh": [
+        "วิวทะเล",
+        "รวมทุกอย่าง",
+        "เฟอร์นิเจอร์ครบ",
+        "ไลฟ์สไตล์โรงแรม"
+      ],
       "rentalTerms": {
         "shortTerm": true,
         "longTerm": true,
         "airbnbAllowed": true,
         "allInclusive": true,
-        "utilitiesIncluded": ["Electricity", "Water"]
+        "utilitiesIncluded": ["Electricity", "Water"],
+        "utilitiesIncludedTh": ["ค่าไฟ", "ค่าน้ำ"]
       },
       "details": {
         "bedrooms": 0,
         "bathrooms": 1,
         "hasKitchen": true,
         "furnished": "fully",
-        "condition": "Ready to move in"
+        "furnishedTh": "เฟอร์นิเจอร์ครบ",
+        "condition": "Ready to move in",
+        "conditionTh": "พร้อมเข้าอยู่"
       },
       "furniture": [
         "TV",
@@ -48,18 +85,26 @@
         "Kitchen counter & cabinets",
         "Full furniture set"
       ],
+      "furnitureTh": [
+        "ทีวี",
+        "ตู้เย็น",
+        "เคาน์เตอร์ครัว",
+        "เฟอร์นิเจอร์ครบชุด"
+      ],
       "facilities": [
-        { "name": "Swimming pool", "icon": "pool" },
-        { "name": "Fitness center", "icon": "fitness" },
-        { "name": "Coffee shop", "icon": "coffee" },
-        { "name": "Italian restaurant", "icon": "restaurant" },
-        { "name": "Breakfast service", "icon": "breakfast" },
-        { "name": "Beach club", "icon": "beach" },
-        { "name": "Hotel-style security & service", "icon": "security" }
+        { "name": "Swimming pool", "nameTh": "สระว่ายน้ำ", "icon": "pool" },
+        { "name": "Fitness center", "nameTh": "ฟิตเนส", "icon": "fitness" },
+        { "name": "Coffee shop", "nameTh": "ร้านกาแฟ", "icon": "coffee" },
+        { "name": "Italian restaurant", "nameTh": "ร้านอาหารอิตาเลียน", "icon": "restaurant" },
+        { "name": "Breakfast service", "nameTh": "อาหารเช้า", "icon": "breakfast" },
+        { "name": "Beach club", "nameTh": "บีชคลับ", "icon": "beach" },
+        { "name": "Hotel-style security & service", "nameTh": "ระบบรักษาความปลอดภัยแบบโรงแรม", "icon": "security" }
       ],
       "lifestyleHighlight": {
         "title": "Luxury Hotel Lifestyle",
-        "description": "Live a luxury hotel lifestyle with everything you need in one place — no bills to manage, no extra charges, just move in and enjoy."
+        "titleTh": "จุดเด่นการใช้ชีวิต",
+        "description": "Live a luxury hotel lifestyle with everything you need in one place — no bills to manage, no extra charges, just move in and enjoy.",
+        "descriptionTh": "ใช้ชีวิตแบบโรงแรมหรู ไม่ต้องจัดการบิล ไม่มีค่าใช้จ่ายแอบแฝง แค่เข้าอยู่แล้วใช้ชีวิตได้ทันที"
       },
       "perfectFor": [
         "Expats",
@@ -68,9 +113,42 @@
         "Airbnb guests",
         "Anyone who wants easy, luxury living"
       ],
+      "perfectForTh": [
+        "ชาวต่างชาติ",
+        "Digital nomads",
+        "นักท่องเที่ยวระยะยาว",
+        "ผู้เข้าพัก Airbnb",
+        "ทุกคนที่ต้องการชีวิตหรูหราแบบง่ายๆ"
+      ],
       "seo": {
         "title": "Bayphere Hotel Studio | Sea View Luxury Rental Pattaya | 25,000 THB/month",
         "description": "Luxury studio hotel with sea view in Pattaya. All-inclusive rent at 25,000 THB/month. Pool, fitness, beach club, restaurant. Perfect for expats and digital nomads."
+      },
+      "content": {
+        "en": {
+          "rentalNote": "No headache – all inclusive (Electricity + Water included / No additional charge)",
+          "studioDetails": [
+            "Studio hotel unit",
+            "Sea view",
+            "Fully furnished",
+            "1 Bathroom (toilet & shower)",
+            "Kitchen",
+            "Ready to move in",
+            "Walkable to the beach"
+          ]
+        },
+        "th": {
+          "rentalNote": "ไม่มีปวดหัว ค่าเช่ารวมหมดแล้ว (รวมค่าน้ำ + ค่าไฟ ไม่มีค่าใช้จ่ายเพิ่ม)",
+          "studioDetails": [
+            "สตูดิโอโรงแรม",
+            "วิวทะเล",
+            "เฟอร์นิเจอร์ครบ",
+            "1 ห้องน้ำ",
+            "ครัว",
+            "พร้อมเข้าอยู่",
+            "เดินไปทะเลได้"
+          ]
+        }
       }
     }
   ],
@@ -78,5 +156,61 @@
     "currency": "THB",
     "defaultListingType": "rent",
     "contactForViewing": true
+  },
+  "translations": {
+    "en": {
+      "available": "Available",
+      "allInclusive": "All Inclusive",
+      "propertyDetails": "Property Details",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "kitchen": "Kitchen",
+      "furnished": "Furnished",
+      "rentalTerms": "Rental Terms",
+      "shortTermOK": "Short-term OK",
+      "longTermOK": "Long-term OK",
+      "airbnbAllowed": "Airbnb Allowed",
+      "utilitiesIncluded": "All Inclusive (Utilities Included)",
+      "furnitureAppliances": "Furniture & Appliances",
+      "hotelFacilities": "Hotel Facilities",
+      "perfectFor": "Perfect For",
+      "interestedInProperty": "Interested in this property?",
+      "contactForAvailability": "Contact us for availability, viewing, or more information.",
+      "whatsappUs": "WhatsApp Us",
+      "lineChat": "LINE Chat",
+      "contactForm": "Contact Form",
+      "backToAllProperties": "Back to All Properties",
+      "studio": "Studio",
+      "yes": "Yes",
+      "no": "No",
+      "walkableToBeach": "Walkable to beach"
+    },
+    "th": {
+      "available": "ว่าง",
+      "allInclusive": "รวมทุกอย่าง",
+      "propertyDetails": "รายละเอียดห้อง",
+      "bedrooms": "ห้องนอน",
+      "bathrooms": "ห้องน้ำ",
+      "kitchen": "ครัว",
+      "furnished": "เฟอร์นิเจอร์",
+      "rentalTerms": "เงื่อนไขการเช่า",
+      "shortTermOK": "เช่าระยะสั้นได้",
+      "longTermOK": "เช่าระยะยาวได้",
+      "airbnbAllowed": "ปล่อย Airbnb ได้",
+      "utilitiesIncluded": "รวมทุกอย่าง (รวมค่าน้ำค่าไฟ)",
+      "furnitureAppliances": "เฟอร์นิเจอร์และเครื่องใช้ไฟฟ้า",
+      "hotelFacilities": "สิ่งอำนวยความสะดวกระดับโรงแรมหรู",
+      "perfectFor": "เหมาะสำหรับ",
+      "interestedInProperty": "สนใจห้องนี้?",
+      "contactForAvailability": "ติดต่อเราเพื่อสอบถามห้องว่างหรือนัดดู",
+      "whatsappUs": "แชท WhatsApp",
+      "lineChat": "แชท LINE",
+      "contactForm": "ฟอร์มติดต่อ",
+      "backToAllProperties": "กลับไปดูห้องทั้งหมด",
+      "studio": "สตูดิโอ",
+      "yes": "มี",
+      "no": "ไม่มี",
+      "walkableToBeach": "เดินไปทะเลได้"
+    }
   }
 }
