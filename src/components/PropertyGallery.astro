@@ -21,7 +21,9 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
       id="main-gallery-image"
       onerror="this.src='/images/house-promo-interior.webp'"
     />
-    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+
+    <!-- Click to zoom overlay (center) -->
+    <div id="main-image-zoom" class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center pointer-events-none">
       <div class="opacity-0 group-hover:opacity-100 transition-opacity">
         <div class="bg-white/90 backdrop-blur-sm rounded-full p-4">
           <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -30,6 +32,19 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
         </div>
       </div>
     </div>
+
+    <!-- Navigation Arrows -->
+    <button id="main-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    <button id="main-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all opacity-0 group-hover:opacity-100 z-10">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+
     <!-- Image Counter -->
     <div class="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1.5 rounded-full text-sm font-medium">
       <span id="current-image-index">1</span> / {allImages.length}
@@ -47,6 +62,7 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
           ]}
           data-index={index}
           data-image={image}
+          data-more={index === 5 && allImages.length > 6 ? 'true' : undefined}
         >
           <img
             src={image}
@@ -55,8 +71,8 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
             onerror="this.src='/images/house-promo-interior.webp'"
           />
           {index === 5 && allImages.length > 6 && (
-            <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
-              <span class="text-white font-semibold">+{allImages.length - 6}</span>
+            <div class="more-images-overlay absolute inset-0 bg-black/60 flex items-center justify-center hover:bg-black/70 transition-colors">
+              <span class="text-white font-semibold text-lg">+{allImages.length - 6}</span>
             </div>
           )}
         </button>
@@ -150,12 +166,41 @@ const allImages = [featuredImage, ...images.filter(img => img !== featuredImage)
   }
 
   // Event listeners
-  mainContainer?.addEventListener('click', () => openLightbox(currentIndex));
 
+  // Main image click opens lightbox
+  mainContainer?.addEventListener('click', (e) => {
+    // Don't open lightbox if clicking on navigation arrows
+    if ((e.target as Element).closest('#main-prev') || (e.target as Element).closest('#main-next')) {
+      return;
+    }
+    openLightbox(currentIndex);
+  });
+
+  // Main slider navigation arrows
+  document.getElementById('main-prev')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+    updateMainImage(currentIndex);
+  });
+
+  document.getElementById('main-next')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % allImages.length;
+    updateMainImage(currentIndex);
+  });
+
+  // Thumbnail clicks
   thumbnailBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       const index = parseInt(btn.dataset.index || '0');
-      updateMainImage(index);
+      const isMoreButton = btn.dataset.more === 'true';
+
+      if (isMoreButton) {
+        // Open lightbox when clicking on "+N more" thumbnail
+        openLightbox(index);
+      } else {
+        updateMainImage(index);
+      }
     });
   });
 
